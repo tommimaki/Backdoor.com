@@ -14,7 +14,7 @@ export default function Sites() {
         {/* Right column: Text content */}
         <div className="text-content  flex flex-col justify-center ">
           <div className="bg-white p-8 rounded-lg shadow-lg ">
-            <h1 className="text-5xl text-green-800 text-center font-bold mb-8">
+            <h1 className="text-5xl text-amber-950 text-center font-bold mb-8">
               Our Current Projects
             </h1>
             <a
