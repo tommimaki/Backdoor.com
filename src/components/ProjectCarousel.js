@@ -1,5 +1,10 @@
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
+import bg from "../assets/bg.jpg";
+import asunto1 from "../assets/asunto1.jpeg";
+import asunto2 from "../assets/asunto2.webp";
+import Image from "next/image";
+import Link from "next/link";
 
 const ProjectCarousel = () => {
   return (
@@ -14,15 +19,17 @@ const ProjectCarousel = () => {
       transitionTime={500}
     >
       <div>
-        <img src="https://via.placeholder.com/300" alt="Project 1" />
-        <p className="legend">Project 1</p>
+        <Link href={"/"}>
+          <Image src={bg} alt="Project 1" />
+          <p className="legend">Project 1</p>
+        </Link>
       </div>
       <div>
-        <img src="https://via.placeholder.com/300" alt="Project 2" />
+        <Image src={asunto1} alt="Project 2" />
         <p className="legend">Project 2</p>
       </div>
       <div>
-        <img src="https://via.placeholder.com/300" alt="Project 3" />
+        <Image src={asunto2} alt="Project 3" />
         <p className="legend">Project 3</p>
       </div>
     </Carousel>

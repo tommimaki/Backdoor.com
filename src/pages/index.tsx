@@ -2,6 +2,7 @@ import Image from "next/image";
 import bg from "../assets/bg.jpg";
 import Layout from "../components/Layout";
 import Sites from "../components/Sites";
+import FinishedProjects from '../components/FinishedProjects';
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
           </h2>
         </div>
         <div
-          className="min-h-screen min-w-fullrelative clip-triangle"
+          className="min-h-screen min-w-full relative clip-triangle"
           style={{
             backgroundImage: `url(${bg.src})`,
             backgroundSize: "cover",
@@ -48,8 +49,9 @@ export default function Home() {
         </div>
 
 
-        <Sites />
       </main >
+      <Sites />
+      <FinishedProjects />
     </Layout >
   );
 }
