@@ -1,19 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400&display=swap");
 
 * {
   padding: 0;
   margin: 0;
 }
 
-.bg {
-  @apply bg-bg-500;
+html {
+  font-family: "Space Grotesk", sans-serif;
 }
+
 .textGreen {
   @apply text-greenish-500;
 }
 
 .clip-triangle {
-  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 60%, 71% 0);
+  -webkit-clip-path: polygon(54% 0, 100% 0, 100% 100%, 20% 100%);
+}
+
+.greenButton {
+  @apply text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2;
 }
