@@ -35,7 +35,7 @@ export default function Sites() {
 
         {/* Right column: Info box */}
         <div className="info-box h-full mt-32 flex-1">
-          <h2 className="text-4xl font-bold mb-4">Currently Building</h2>
+          <h2 className="text-4xl font-bold mb-4">Current Building Projects</h2>
           <p>
             We are excited to contribute to the growth and development of the
             Helsinki and Uusimaa region through these projects, and we look
