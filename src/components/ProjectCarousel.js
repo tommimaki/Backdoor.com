@@ -10,7 +10,7 @@ const ProjectCarousel = () => {
   return (
     <Carousel
       showArrows
-      showThumbs={true}
+      showThumbs={false}
       showStatus={true}
       showIndicators={false}
       infiniteLoop

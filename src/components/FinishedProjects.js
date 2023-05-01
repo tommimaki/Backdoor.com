@@ -41,11 +41,11 @@ const FinishedProjects = () => {
   ];
 
   return (
-    <div className="bg-green-200  w-full min-h-screen flex-grow z-0">
+    <div className="bg-green-400  w-full min-h-screen flex-grow z-0">
       {/* <div className="bg-triangle absolute w-full min-h-screen  flex-grow  z-0"></div> */}
       <div className="wrapper min-h-screen flex flex-col ">
         <div className="container mx-auto p-4 z-10">
-          <h1 className="text-7xl  text-yellow-950  font-bold mb-8">
+          <h1 className="text-7xl  text-white  font-bold mb-8">
             Finished Projects
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
@@ -55,7 +55,8 @@ const FinishedProjects = () => {
                 className="bg-white shadow-lg rounded-lg p-6"
               >
                 <img
-                  src={project.image}
+                  // src={project.image}
+                  src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
                   alt={project.title}
                   className="w-full h-48 object-cover mb-4 rounded-lg"
                 />
@@ -75,7 +76,7 @@ const FinishedProjects = () => {
                           viewBox="0 0 24 24"
                           strokeWidth={1.5}
                           stroke="currentColor"
-                          className="w-6 h-6"
+                          className="w-10 h-12 text-blue-500"
                         >
                           <path
                             strokeLinecap="round"
@@ -84,7 +85,7 @@ const FinishedProjects = () => {
                           />
                         </svg>
                         <p>
-                          Type of house: <b>{project.houseType}</b>
+                          Type of house: <br /> <b>{project.houseType}</b>
                         </p>
                       </li>
                     </div>
@@ -95,7 +96,7 @@ const FinishedProjects = () => {
                         viewBox="0 0 24 24"
                         strokeWidth={1.5}
                         stroke="currentColor"
-                        className="w-6 h-6"
+                        className="w-10 h-12 text-blue-500"
                       >
                         <path
                           strokeLinecap="round"
@@ -104,7 +105,8 @@ const FinishedProjects = () => {
                         />
                       </svg>
                       <p>
-                        Number of apartments: <b>{project.numApartments}</b>
+                        Number of apartments:
+                        <br /> <b>{project.numApartments}</b>
                       </p>
                     </li>
                     <li className="flex gap-1">
@@ -114,7 +116,7 @@ const FinishedProjects = () => {
                         viewBox="0 0 24 24"
                         strokeWidth={1.5}
                         stroke="currentColor"
-                        className="w-6 h-6"
+                        className="w-10 h-12 text-blue-500"
                       >
                         <path
                           strokeLinecap="round"
@@ -123,7 +125,9 @@ const FinishedProjects = () => {
                         />
                       </svg>
                       <p>
-                        Number of floors:<b> {project.numFloors}</b>
+                        Number of floors:
+                        <br />
+                        <b> {project.numFloors}</b>
                       </p>
                     </li>
                     <li className="flex gap-1">
@@ -133,7 +137,7 @@ const FinishedProjects = () => {
                         viewBox="0 0 24 24"
                         strokeWidth={1.5}
                         stroke="currentColor"
-                        className="w-6 h-6"
+                        className="w-10 h-12 text-blue-500"
                       >
                         <path
                           strokeLinecap="round"
@@ -148,7 +152,8 @@ const FinishedProjects = () => {
                       </svg>
 
                       <p>
-                        Location: <b>{project.location}</b>
+                        Location:
+                        <br /> <b>{project.location}</b>
                       </p>
                     </li>
                   </ul>

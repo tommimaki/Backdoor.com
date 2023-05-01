@@ -3,6 +3,7 @@ import bg from "../assets/bg.jpg";
 import Layout from "../components/Layout";
 import Sites from "../components/Sites";
 import FinishedProjects from '../components/FinishedProjects';
+import Apartments from '../components/Apartments';
 
 export default function Home() {
   return (
@@ -52,6 +53,7 @@ export default function Home() {
       </main >
       <Sites />
       <FinishedProjects />
+      <Apartments />
     </Layout >
   );
 }
