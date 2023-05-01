@@ -67,7 +67,7 @@ const FinishedProjects = () => {
                             />
                           </svg>
                           <p>
-                            Type of house: <br /> <b>{project.houseType}</b>
+                            Type of house: <br /> <b>{project.buildingType}</b>
                           </p>
                         </li>
                       </div>
@@ -88,7 +88,7 @@ const FinishedProjects = () => {
                         </svg>
                         <p>
                           Number of apartments:
-                          <br /> <b>{project.numApartments}</b>
+                          <br /> <b>{project.numberOfApartments}</b>
                         </p>
                       </li>
                       <li className="flex gap-1">
@@ -109,7 +109,7 @@ const FinishedProjects = () => {
                         <p>
                           Number of floors:
                           <br />
-                          <b> {project.numFloors}</b>
+                          <b> {project.floors}</b>
                         </p>
                       </li>
                       <li className="flex gap-1">

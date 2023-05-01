@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <Layout>
       <main className="flex flex-col bg-green-400">
-        <div className="absolute left-0 top-0 z-10 sm:pl-32 sm:pt-40 p-5 w-full flex flex-col">
+        <div className="absolute left-0 top-0 z-10 sm:pl-24 sm:pt-40 p-5 w-full flex flex-col">
           <h1 className="text-gray text-9xl">We <i> Build</i> </h1>
           <h2 className="text-white ml-6 text-5xl">
             You&nbsp;
