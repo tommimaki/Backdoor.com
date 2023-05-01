@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const FinishedProjects = () => {
-  const projects = [
+  const projectss = [
     {
       id: 1,
       title: "Completed Project 1",
@@ -40,14 +41,31 @@ const FinishedProjects = () => {
     },
   ];
 
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    async function fetchSites() {
+      try {
+        const response = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}sales`
+        );
+
+        console.log(response.data);
+        setProjects(response.data);
+      } catch (error) {
+        console.error("Error fetching sites:", error.message);
+      }
+    }
+
+    fetchSites();
+  }, []);
+
   return (
     <div className="bg-green-400  w-full min-h-screen flex-grow z-0">
       {/* <div className="bg-triangle absolute w-full min-h-screen  flex-grow  z-0"></div> */}
       <div className="wrapper min-h-screen flex flex-col ">
         <div className="container mx-auto p-4 z-10">
-          <h1 className="text-7xl  text-white  font-bold mb-8">
-            Finished Projects
-          </h1>
+          <h1 className="text-7xl    font-bold mb-8">Finished Projects</h1>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
             {projects.map((project) => (
               <div
