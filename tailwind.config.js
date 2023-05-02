@@ -7,18 +7,26 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        "space-grotesk": ["Space Grotesk", "sans-serif"],
+      backgroundColor: {
+        accent: "#D35C38",
+        bgLight: "#F2EDE9",
+        bgDark: "#D9CCC1",
       },
-      colors: {
-        bg: {
-          500: "#EDEAE5",
-        },
-        greenish: {
-          500: "#9FEDD7",
-        },
+      textColor: {
+        textDark: "#403732",
+        accent: "#D35C38",
+        "textDark-hover": "#302B27",
+      },
+      borderColor: {
+        accent: "#D35C38",
+        textDark: "#403732",
+      },
+      fontFamily: {
+        text: ["Quicksand", "sans-serif"],
+        heading: ["Secular One", "sans-serif"],
       },
     },
   },
+  variants: {},
   plugins: [],
 };

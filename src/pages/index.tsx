@@ -8,15 +8,16 @@ import Apartments from '../components/Apartments';
 export default function Home() {
   return (
     <Layout>
-      <main className="flex flex-col bg-green-400">
-        <div className="absolute left-0 top-0 z-10 sm:pl-24 sm:pt-40 p-5 w-full flex flex-col">
-          <h1 className="text-gray text-9xl">We <i> Build</i> </h1>
-          <h2 className="text-white ml-6 text-5xl">
+      <main className="flex flex-col bg-bgDark">
+        <div className="absolute left-0 top-0 z-10 sm:pl-20 sm:pt-40 p-5 w-full flex flex-col">
+          <h1 className="text-textDark font-heading  text-9xl">We Build </h1>
+          <h2 className="text-white ml-6 font-heading font-quicksand text-5xl">
             You&nbsp;
-            <b>
+            <b className="text-white">
               Live
             </b>
           </h2>
+          <h3 className="font-text text-accent text-2xl ml-10"> -Backdoor</h3>
         </div>
         <div
           className="min-h-screen min-w-full relative clip-triangle"
@@ -28,23 +29,29 @@ export default function Home() {
         >
         </div>
         <div className="absolute bottom-0 left-0 w-full flex flex-wrap justify-around p-5">
-          <div className="content-box border-2 border-green-600 bg-white p-5 h-62 shadow-lg rounded-lg overflow-wrap max-w-xs flex flex-col justify-center">
-            <h3 className="text-green-700  text-center text-2xl">Current Projects</h3>
+          <div className="content-box border-2 border-accent bg-bgLight p-5 h-62 shadow-lg rounded-lg overflow-wrap max-w-xs flex flex-col justify-center">
+            <h3 className="text-textDark  text-center text-2xl">Current Projects</h3>
             <p className="text-gray-700 pt-4">Check out our latest projects, including a new residential complex, a commercial office tower, and a public park renovation.</p>
-            <button className="greenButton mt-4">Take me there</button>
+            <button className="bg-accent text-white font-text border w-full border-accent rounded-md px-4 py-2 mt-2 hover:bg-bgDark">
+              Take me there
+            </button>
           </div>
 
 
-          <div className="content-box bg-white border-2 border-green-600 p-5 h-62 shadow-lg rounded-lg overflow-wrap max-w-xs flex flex-col justify-center">
-            <h3 className="text-green-700  text-center text-2xl">Finished Projects</h3>
+          <div className="content-box border-2 border-accent bg-bgLight p-5 h-62 shadow-lg rounded-lg overflow-wrap max-w-xs flex flex-col justify-center">
+            <h3 className=" text-center text-2xl">Finished Projects</h3>
             <p className="text-gray-700 pt-4">Take a look at our past completed projects, including a luxury hotel, a sports arena, and a university campus expansion.</p>
-            <button className="greenButton mt-4">Take me there</button>
+            <button className="bg-accent text-white font-text border w-full border-accent rounded-md px-4 py-2 mt-2 hover:bg-bgDark">
+              Take me there
+            </button>
           </div>
 
-          <div className="content-box bg-white p-5 border-2 border-green-600 h-62 shadow-lg rounded-lg overflow-wrap max-w-xs flex flex-col justify-center">
-            <h3 className="text-green-700 text-center text-2xl">Apartments For Sale</h3>
+          <div className="content-box border-2 border-accent bg-bgLight p-5 h-62 shadow-lg rounded-lg overflow-wrap max-w-xs flex flex-col justify-center">
+            <h3 className=" text-center text-2xl">Apartments For Sale</h3>
             <p className="text-gray-700 pt-4">Explore our selection of apartments for sale, ranging from cozy studios to spacious penthouses, in prime locations around the city.</p>
-            <button className="greenButton mt-4">Take me there</button>
+            <button className="bg-accent text-white font-text border w-full border-accent rounded-md px-4 py-2 mt-2 hover:bg-bgDark">
+              Take me there
+            </button>
           </div>
 
         </div>

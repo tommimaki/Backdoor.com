@@ -9,21 +9,78 @@ const DynamicLeafletMap = dynamic(() => import("../components/LeafletMap"), {
 
 const ProjectPage = ({ project }) => {
   const [selectedDate, setSelectedDate] = useState(new Date());
+  const [showFullDescription, setShowFullDescription] = useState(false);
 
   console.log(project);
   return (
     <Layout>
-      <div className="wrapper bg-slate-100 ">
+      <div className="wrapper bg-bgLight ">
         <div className="container min-h-screen mx-auto  p-4s">
-          <div className="relative w-full h-full mb-4 overflow-hidden">
+          <div className=" w-full h-full mb-4 overflow-hidden">
             <img
               src={project.images[0]}
               alt={project.title}
               className="w-full h-full object-cover"
             />
-            <div className="absolute text-center left-1/2 bottom-0 w-4/5 p-6  bg-white bg-opacity-90 transform -translate-x-1/2 rounded-t-xl">
-              <h1 className="text-5xl font-extrabold mb-5">{project.title}</h1>
-              <p className="text-xl ">{project.description}</p>
+            <div className="text-center p-6 bg-white bg-opacity-90 rounded-b-xl">
+              <h1 className="text-5xl font-heading font-extrabold mb-5">
+                {project.title}
+              </h1>
+              {project.description.split("\n").map((paragraph, index) => {
+                if (!showFullDescription && index > 0) {
+                  return null;
+                }
+                return (
+                  <p key={index} className="text-xl font-text mb-4">
+                    {paragraph}
+                  </p>
+                );
+              })}
+              {!showFullDescription ? (
+                <div className="flex items-center justify-center">
+                  <div className="flex flex-col border rounded-full border-accent p-2  hover:bg-accent">
+                    <button
+                      className="text-sm font-text underline  "
+                      onClick={() => setShowFullDescription(true)}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        className="w-12 h-12 accent-icon mx-auto"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <div className="flex items-center justify-center">
+                  <div className="flex flex-col border rounded-full border-accent p-4  hover:bg-accent">
+                    <button
+                      className="text-sm font-text underline  "
+                      onClick={() => setShowFullDescription(false)}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        className="w-6 h-6"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M11.47 7.72a.75.75 0 011.06 0l7.5 7.5a.75.75 0 11-1.06 1.06L12 9.31l-6.97 6.97a.75.75 0 01-1.06-1.06l7.5-7.5z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
           {/* Add other project details here */}
@@ -173,7 +230,7 @@ const ProjectPage = ({ project }) => {
             </table>
           </div>
         </div>
-        <div className="flex p-10 bg-slate-100 mt-10">
+        <div className="flex p-10 bg-bgDark mt-10">
           <div className="w-1/2 pr-4">
             <VisitingDayPicker />
           </div>
@@ -181,6 +238,7 @@ const ProjectPage = ({ project }) => {
             <DynamicLeafletMap location={project} />
           </div>
         </div>
+        <div className="bg-bgLight min-h-screen"></div>
       </div>
     </Layout>
   );

@@ -6,14 +6,7 @@
 * {
   padding: 0;
   margin: 0;
-}
-
-html {
-  font-family: "Space Grotesk", sans-serif;
-}
-
-.textGreen {
-  @apply text-greenish-500;
+  color: #403732;
 }
 
 .clip-triangle {
@@ -50,4 +43,6 @@ html {
   z-index: -1;
 }
 
-/* styles/global.css */
+.accent-icon {
+  stroke: #d35c38;
+}

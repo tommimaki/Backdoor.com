@@ -23,10 +23,12 @@ const FinishedProjects = () => {
   }, []);
 
   return (
-    <div className="bg-green-400  w-full min-h-screen flex-grow z-0">
+    <div className="bg-bgDark  w-full min-h-screen flex-grow z-0">
       <div className="wrapper min-h-screen flex flex-col ">
         <div className="container mx-auto p-4 z-10">
-          <h1 className="text-7xl    font-bold mb-8">Finished Projects</h1>
+          <h1 className="text-7xl  font-heading text-textDark  font-bold mb-8">
+            Finished Projects
+          </h1>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
             {projects.map((project) => (
               <Link key={project._id} href={`/project/${project._id}`}>
@@ -46,7 +48,7 @@ const FinishedProjects = () => {
                   {/* <p>{project.description}</p> */}
 
                   <div className="mt-4">
-                    <h3 className="text-xl font-semibold mb-2">
+                    <h3 className="text-xl  font-semibold mb-2">
                       Project Details:
                     </h3>
                     <ul className="grid grid-cols-2 gap-2">
@@ -58,7 +60,7 @@ const FinishedProjects = () => {
                             viewBox="0 0 24 24"
                             strokeWidth={1.5}
                             stroke="currentColor"
-                            className="w-10 h-12 text-blue-500"
+                            className="w-10 h-12 accent-icon"
                           >
                             <path
                               strokeLinecap="round"
@@ -78,7 +80,7 @@ const FinishedProjects = () => {
                           viewBox="0 0 24 24"
                           strokeWidth={1.5}
                           stroke="currentColor"
-                          className="w-10 h-12 text-blue-500"
+                          className="w-10 h-12 accent-icon"
                         >
                           <path
                             strokeLinecap="round"
@@ -98,7 +100,7 @@ const FinishedProjects = () => {
                           viewBox="0 0 24 24"
                           strokeWidth={1.5}
                           stroke="currentColor"
-                          className="w-10 h-12 text-blue-500"
+                          className="w-10 h-12 accent-icon"
                         >
                           <path
                             strokeLinecap="round"
@@ -119,7 +121,7 @@ const FinishedProjects = () => {
                           viewBox="0 0 24 24"
                           strokeWidth={1.5}
                           stroke="currentColor"
-                          className="w-10 h-12 text-blue-500"
+                          className="w-10 h-12 accent-icon"
                         >
                           <path
                             strokeLinecap="round"

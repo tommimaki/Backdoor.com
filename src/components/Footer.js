@@ -4,11 +4,11 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-green-400 text-grey-600 py-6">
+    <footer className="bg-bgDark text-grey-600 py-6">
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap justify-between items-center">
           <div className="w-full md:w-1/3 mb-4 md:mb-0">
-            <h3 className="text-xl font-semibold mb-2">Company Name</h3>
+            <h3 className="text-xl font-semibold mb-2">Backdoor</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
               nisl eros, pulvinar facilisis justo mollis, auctor consequat urna.

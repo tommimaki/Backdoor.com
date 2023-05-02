@@ -24,7 +24,7 @@ export default function Sites() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col pb-10 items-center bg-gray-100 justify-center">
+    <div className="min-h-screen flex flex-col pb-10 items-center bg-bgLight justify-center">
       <div className="container grid grid-cols-2  gap-5 h-full">
         {/* Left column: Carousel */}
         <div className="carousel h-full mt-32 flex-1">
@@ -33,17 +33,25 @@ export default function Sites() {
 
         {/* Right column: Info box */}
         <div className="info-box h-full mt-32 flex-1">
-          <h2 className="text-4xl font-bold mb-4">Current Building Projects</h2>
-          <p>
+          <h2 className="text-5xl font-heading text-textDark font-bold mb-16">
+            Current Building Projects
+          </h2>
+          <p className="font-text text-xl mb-16">
             We are excited to contribute to the growth and development of the
             Helsinki and Uusimaa region through these projects, and we look
             forward to unveiling more innovative construction projects in the
             near future.
           </p>
+          <button className="bg-accent text-white font-text border w-full border-accent rounded-md px-4 py-2 hover:bg-bgDark">
+            See Them All
+          </button>
         </div>
       </div>
 
       {/* Projects */}
+      <div className="text-left w-full mx-auto ml-20 pt-10">
+        <h2 className="font-heading text-5xl">Featured Projects </h2>
+      </div>
       <div className="container grid grid-cols-2 gap-5 mt-8">
         {sites.map((site) => (
           <div key={site._id} className="bg-white shadow-lg rounded-lg p-6">
@@ -52,11 +60,15 @@ export default function Sites() {
               alt={site.title}
               className="w-full h-48 object-cover mb-4 rounded-lg"
             />
-            <h2 className="text-2xl font-semibold mb-4">{site.title}</h2>
-            <p>{site.description}</p>
+            <h2 className="text-2xl font-semibold text-textDark font-heading mb-4">
+              {site.title}
+            </h2>
+            <p className="font-text text-textDark">{site.description}</p>
 
             <div className="mt-4">
-              <h3 className="text-xl font-semibold mb-2">Project Details:</h3>
+              <h3 className="text-xl font-semibold text-textDark mb-2">
+                Project Details:
+              </h3>
               <ul className="grid grid-cols-2 gap-2">
                 <li className="flex gap-1">
                   <p>

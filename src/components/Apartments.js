@@ -20,60 +20,71 @@ export default function Apartments() {
   }, []);
 
   return (
-    <div className="min-h-screen">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {apartments?.map((apartment) => (
-          <Link
-            key={apartment._id}
-            href={`/apartments/${apartment._id}`}
-            className="block rounded-lg p-4 shadow-sm shadow-indigo-100"
-          >
-            <img
-              alt={apartment.title}
-              src={apartment.images[0]}
-              className="h-56 w-full rounded-md object-cover"
-            />
-
-            <div className="mt-2">
-              <dl>
-                <div>
-                  <dt className="sr-only">Title</dt>
-                  <dd className="text-sm text-gray-500">{apartment.title}</dd>
-                </div>
-
-                <div>
-                  <dt className="sr-only">Description</dt>
-                  <dd className="font-medium">{apartment.description}</dd>
-                </div>
-              </dl>
-
-              <div className="mt-6 flex items-center gap-8 text-xs">
-                <div className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
-                  <div>
-                    <dt className="">Price</dt>
-                    <dd className="text-sm text-gray-500">
-                      {apartment.sellingPrice}€
-                    </dd>
+    <div className="bg-bgLight w-full min-h-screen ">
+      <div className="wrapper flex flex-col">
+        <div className="mx-auto p-10">
+          <div className="text-right">
+            <h1 class="text-7xl text-textDark font-bold mb-8">
+              Apartments for sale
+            </h1>
+          </div>
+          <div className="relative">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-4 z-10">
+              {apartments?.map((apartment) => (
+                <Link
+                  key={apartment._id}
+                  href={`/apartments/${apartment._id}`}
+                  className="block rounded-lg p-4 shadow-sm bg-white  shadow-indigo-200"
+                >
+                  <img
+                    alt={apartment.title}
+                    src={apartment.images[0]}
+                    className="h-56 w-full rounded-md object-cover"
+                  />
+                  <div className="mt-2">
+                    <dl>
+                      <div>
+                        <dt className="sr-only">Title</dt>
+                        <dd className="text-sm text-gray-500">
+                          {apartment.title}
+                        </dd>
+                      </div>
+                      <div>
+                        <dt className="sr-only">Description</dt>
+                        <dd className="font-medium">{apartment.description}</dd>
+                      </div>
+                    </dl>
+                    <div className="mt-6 flex items-center gap-8 text-xs">
+                      <div className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
+                        <div>
+                          <dt className="">Price</dt>
+                          <dd className="text-sm text-gray-500">
+                            {apartment.sellingPrice}€
+                          </dd>
+                        </div>
+                        <div>
+                          <dt className="">Floor</dt>
+                          <dd className="text-sm text-gray-500">
+                            {apartment.floor}
+                          </dd>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <dt className="">Floor</dt>
-                    <dd className="text-sm text-gray-500">{apartment.floor}</dd>
-                  </div>
-                </div>
-              </div>
+                </Link>
+              ))}
             </div>
-          </Link>
-        ))}
-      </div>
-      {apartments?.length === 0 && (
-        <div className="text-center text-gray-500 text-xl">
-          No apartments available.
+            {apartments?.length === 0 && (
+              <div className="text-center text-gray-500 text-xl">
+                No apartments available.
+              </div>
+            )}
+          </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }
-
 // <Link
 //   href="/"
 //   className="block rounded-lg p-4 shadow-sm shadow-indigo-100"
