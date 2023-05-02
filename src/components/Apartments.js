@@ -20,7 +20,7 @@ export default function Apartments() {
   }, []);
 
   return (
-    <div className="bg-bgLight w-full min-h-screen ">
+    <div id="apartments" className="bg-bgLight w-full min-h-screen ">
       <div className="wrapper flex flex-col">
         <div className="mx-auto p-10">
           <div className="text-right">

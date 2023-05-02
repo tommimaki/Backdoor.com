@@ -23,7 +23,10 @@ const FinishedProjects = () => {
   }, []);
 
   return (
-    <div className="bg-bgDark  w-full min-h-screen flex-grow z-0">
+    <div
+      id="finishedProjects"
+      className="bg-bgDark  w-full min-h-screen flex-grow z-0"
+    >
       <div className="wrapper min-h-screen flex flex-col ">
         <div className="container mx-auto p-4 z-10">
           <h1 className="text-7xl  font-heading text-textDark  font-bold mb-8">

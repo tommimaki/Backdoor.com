@@ -24,7 +24,10 @@ export default function Sites() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col pb-10 items-center bg-bgLight justify-center">
+    <div
+      id="sites"
+      className="min-h-screen flex flex-col pb-10 items-center bg-bgLight justify-center"
+    >
       <div className="container grid grid-cols-2  gap-5 h-full">
         {/* Left column: Carousel */}
         <div className="carousel h-full mt-32 flex-1">
