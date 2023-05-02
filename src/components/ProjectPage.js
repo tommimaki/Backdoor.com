@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import Layout from "./Layout";
 import VisitingDayPicker from "./VisitingDayPicker";
 import dynamic from "next/dynamic";
+import SmoothDropdown from "./SmoothDropdown";
+import ProjectCarousel from "./ProjectCarousel";
+
 const DynamicLeafletMap = dynamic(() => import("../components/LeafletMap"), {
   ssr: false,
 });
@@ -22,7 +25,7 @@ const ProjectPage = ({ project }) => {
               alt={project.title}
               className="w-full h-full object-cover"
             />
-            <div className="text-center p-6 bg-white bg-opacity-90 rounded-b-xl">
+            <div className="text-center p-6 bg-bgDark bg-opacity-90 rounded-b-xl">
               <h1 className="text-5xl font-heading font-extrabold mb-5">
                 {project.title}
               </h1>
@@ -36,58 +39,16 @@ const ProjectPage = ({ project }) => {
                   </p>
                 );
               })}
-              {!showFullDescription ? (
-                <div className="flex items-center justify-center">
-                  <div className="flex flex-col border rounded-full border-accent p-2  hover:bg-accent">
-                    <button
-                      className="text-sm font-text underline  "
-                      onClick={() => setShowFullDescription(true)}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        className="w-12 h-12 accent-icon mx-auto"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              ) : (
-                <div className="flex items-center justify-center">
-                  <div className="flex flex-col border rounded-full border-accent p-4  hover:bg-accent">
-                    <button
-                      className="text-sm font-text underline  "
-                      onClick={() => setShowFullDescription(false)}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        className="w-6 h-6"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M11.47 7.72a.75.75 0 011.06 0l7.5 7.5a.75.75 0 11-1.06 1.06L12 9.31l-6.97 6.97a.75.75 0 01-1.06-1.06l7.5-7.5z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              )}
+              <SmoothDropdown description={project.description} />
             </div>
           </div>
-          {/* Add other project details here */}
-          <div className="mt-10 h-56">
-            <h3 className="text-xl font-semibold mb-2">Project Details:</h3>
-            <ul className="grid grid-cols-2 gap-2">
-              <div>
+
+          <div className="my-10 h-44">
+            <h3 className="text-3xl text-center font-heading font-semibold ">
+              Project Details:
+            </h3>
+            <div className="flex items-center justify-center h-full">
+              <ul className="grid grid-cols-2 gap-2 ">
                 <li className="flex gap-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +56,7 @@ const ProjectPage = ({ project }) => {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-10 h-12 text-blue-500"
+                    className="w-10 h-12 accent-icon"
                   >
                     <path
                       strokeLinecap="round"
@@ -107,82 +68,83 @@ const ProjectPage = ({ project }) => {
                     Type of house: <br /> <b>{project.buildingType}</b>
                   </p>
                 </li>
-              </div>
-              <li className="flex gap-1">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-10 h-12 text-blue-500"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z"
-                  />
-                </svg>
-                <p>
-                  Number of apartments:
-                  <br /> <b>{project.numberOfApartments}</b>
-                </p>
-              </li>
-              <li className="flex gap-1">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-10 h-12 text-blue-500"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"
-                  />
-                </svg>
-                <p>
-                  Number of floors:
-                  <br />
-                  <b> {project.floors}</b>
-                </p>
-              </li>
-              <li className="flex gap-1">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-10 h-12 text-blue-500"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
-                  />
-                </svg>
 
-                <p>
-                  Location:
-                  <br />{" "}
-                  <b>
-                    {project.location},{project.address}
-                  </b>
-                </p>
-              </li>
-            </ul>
+                <li className="flex gap-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-10 h-12 accent-icon"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z"
+                    />
+                  </svg>
+                  <p>
+                    Number of apartments:
+                    <br /> <b>{project.numberOfApartments}</b>
+                  </p>
+                </li>
+                <li className="flex gap-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-10 h-12 accent-icon"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"
+                    />
+                  </svg>
+                  <p>
+                    Number of floors:
+                    <br />
+                    <b> {project.floors}</b>
+                  </p>
+                </li>
+                <li className="flex gap-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-10 h-12 accent-icon"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+                    />
+                  </svg>
+
+                  <p>
+                    Location:
+                    <br />{" "}
+                    <b>
+                      {project.location},{project.address}
+                    </b>
+                  </p>
+                </li>
+              </ul>
+            </div>
           </div>
 
-          <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-            <h2 className="text-3xl mb-3">Available Apartments</h2>
+          <div className="relative overflow-x-auto mb-10 shadow-md sm:rounded-lg">
+            <h2 className="text-3xl font-heading mb-4">Available Apartments</h2>
             <table className="w-full text-sm text-left text-gray-500 ">
               <thead className="text-xs text-gray-700 uppercase bg-gray-50 ">
                 <tr>
@@ -230,7 +192,7 @@ const ProjectPage = ({ project }) => {
             </table>
           </div>
         </div>
-        <div className="flex p-10 bg-bgDark mt-10">
+        <div className="flex p-10 bg-bgDark ">
           <div className="w-1/2 pr-4">
             <VisitingDayPicker />
           </div>
@@ -238,7 +200,9 @@ const ProjectPage = ({ project }) => {
             <DynamicLeafletMap location={project} />
           </div>
         </div>
-        <div className="bg-bgLight min-h-screen"></div>
+        <div className="bg-bgLight  mx-20">
+          {project && <ProjectCarousel project={project} />}
+        </div>
       </div>
     </Layout>
   );

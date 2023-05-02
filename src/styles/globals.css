@@ -9,6 +9,11 @@
   color: #403732;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 .clip-triangle {
   -webkit-clip-path: polygon(54% 0, 100% 0, 100% 100%, 20% 100%);
 }

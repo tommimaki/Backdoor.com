@@ -6,20 +6,50 @@ const VisitingDayPicker = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-
+  const [showSuccess, setShowSuccess] = useState(false);
   const handleDateChange = (event) => {
     setSelectedDate(event.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`Submitting request for a showing on ${selectedDate}`);
-    // Submit the data to the server or API here.
+    setShowSuccess(true);
+    //TODO connect to backend
+    setTimeout(() => {
+      setShowSuccess(false);
+    }, 5000);
   };
-
   return (
     <div>
-      <h3 className="text-xl text-center font-semibold ">Book a showing:</h3>
+      <h3 className="text-2xl text-center mb-4 font-semibold ">
+        Book a showing:
+      </h3>
+      {showSuccess && (
+        <div
+          class="flex p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 "
+          role="alert"
+        >
+          <svg
+            aria-hidden="true"
+            class="flex-shrink-0 inline w-5 h-5 mr-3"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+          <span class="sr-only">Info</span>
+          <div>
+            <span class="font-medium">Success alert!</span> Request for a
+            showing sent for {selectedDate}, we will get back to you with a
+            confirmation ASAP!
+          </div>
+        </div>
+      )}
       <form onSubmit={handleSubmit}>
         <label
           htmlFor="name"
@@ -76,8 +106,8 @@ const VisitingDayPicker = () => {
           onChange={handleDateChange}
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-4"
         />
-        <button type="submit" className="greenButton">
-          Suggest a date
+        <button className="bg-accent text-white font-text  border w-full border-accent rounded-md px-4 py-2 hover:bg-bgLight hover:text-black">
+          Suggest A Date!
         </button>
       </form>
     </div>

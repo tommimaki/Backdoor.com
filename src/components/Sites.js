@@ -28,7 +28,7 @@ export default function Sites() {
       <div className="container grid grid-cols-2  gap-5 h-full">
         {/* Left column: Carousel */}
         <div className="carousel h-full mt-32 flex-1">
-          <ProjectCarousel />
+          <ProjectCarousel project={sites[0]} />
         </div>
 
         {/* Right column: Info box */}
