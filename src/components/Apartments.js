@@ -33,7 +33,7 @@ export default function Apartments() {
               {apartments?.map((apartment) => (
                 <Link
                   key={apartment._id}
-                  href={`/apartments/${apartment._id}`}
+                  href={`/apartment/${apartment._id}`}
                   className="block rounded-lg p-4 shadow-sm bg-white  shadow-indigo-200"
                 >
                   <img

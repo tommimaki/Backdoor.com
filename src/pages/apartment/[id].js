@@ -2,7 +2,7 @@
 import { useRouter } from "next/router";
 import axios from "axios";
 import Layout from "../../components/Layout";
-
+import ApartmentDetails from "../../components/ApartmentDetails";
 const Apartment = ({ apartment }) => {
   const router = useRouter();
 
@@ -10,7 +10,11 @@ const Apartment = ({ apartment }) => {
     return <div>Loading...</div>;
   }
 
-  // JSX code to display the apartment information
+  return (
+    <Layout>
+      <ApartmentDetails apartment={apartment} />
+    </Layout>
+  );
 };
 
 export async function getStaticPaths() {
@@ -25,7 +29,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const res = await axios.get(
-    `${process.env.NEXT_PUBLIC_API_URL}apartments/${params.id}`
+    `${process.env.NEXT_PUBLIC_API_URL}apartment/${params.id}`
   );
   const apartment = res.data;
 
