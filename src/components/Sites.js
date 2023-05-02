@@ -14,8 +14,6 @@ export default function Sites() {
         const response = await axios.get(
           `${process.env.NEXT_PUBLIC_API_URL}sites`
         );
-        console.log(`${process.env.NEXT_PUBLIC_API_URL}sites`);
-        console.log(response.data);
         setSites(response.data);
       } catch (error) {
         console.error("Error fetching sites:", error.message);
