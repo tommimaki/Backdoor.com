@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
+import { parseISO, format } from "date-fns";
 import ProjectCarousel from "./ProjectCarousel";
+import Link from "next/link";
 
 export default function Sites() {
   const [sites, setSites] = useState([]);
@@ -45,15 +46,17 @@ export default function Sites() {
             forward to unveiling more innovative construction projects in the
             near future.
           </p>
-          <button className="bg-accent text-white font-text border w-full border-accent rounded-md px-4 py-2 hover:bg-bgDark">
-            See Them All
-          </button>
+          <Link href={"/inconstruction"}>
+            <button className="bg-accent text-white font-text border w-full border-accent rounded-md px-4 py-2 hover:bg-bgDark">
+              See Them All
+            </button>
+          </Link>
         </div>
       </div>
 
       {/* Projects */}
       <div className="text-left w-full mx-auto ml-20 pt-10">
-        <h2 className="font-heading text-5xl">Featured Projects </h2>
+        <h2 className="font-heading text-5xl">Featured </h2>
       </div>
       <div className="container grid grid-cols-2 gap-5 mt-8">
         {sites.map((site) => (
@@ -82,7 +85,7 @@ export default function Sites() {
                   <p>
                     Finishing date:
                     <br />{" "}
-                    <b>{new Date(site.finishingDate).toLocaleDateString()}</b>
+                    <b>{format(parseISO(site.finishingDate), "MM/yyyy")}</b>
                   </p>
                 </li>
                 <li className="flex gap-1">
@@ -105,9 +108,8 @@ export default function Sites() {
     </div>
   );
 }
-//add in a bit
-{
-  /* <ol class="items-center sm:flex">
+
+/* <ol class="items-center sm:flex">
     <li class="relative mb-6 sm:mb-0">
         <div class="flex items-center">
             <div class="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0">
@@ -148,4 +150,3 @@ export default function Sites() {
         </div>
     </li>
 </ol> */
-}

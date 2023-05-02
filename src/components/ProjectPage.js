@@ -184,7 +184,7 @@ const ProjectPage = ({ project }) => {
                     <td className="px-2 py-4">{apartment.floor}</td>
                     <td className="px-2 py-4">
                       {" "}
-                      <button className="greenButton "> See Apartment</button>
+                      <button className="orangeButton"> See Apartment</button>
                     </td>
                   </tr>
                 ))}

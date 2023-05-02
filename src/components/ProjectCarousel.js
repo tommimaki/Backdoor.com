@@ -58,7 +58,7 @@ const ProjectCarousel = ({ project }) => {
     >
       {project?.images.map((image, index) => (
         <div key={index}>
-          <Link href={`/project/${project._id}`}>
+          <Link href={`/inconstruction/${project._id}`}>
             <img src={image} alt={`Project ${index + 1}`} />
             <p className="legend">{project.title}</p>
           </Link>

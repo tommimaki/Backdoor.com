@@ -24,7 +24,7 @@ export default function Apartments() {
       <div className="wrapper flex flex-col">
         <div className="mx-auto p-10">
           <div className="text-right">
-            <h1 class="text-7xl text-textDark font-bold mb-8">
+            <h1 class="text-7xl text-textDark font-heading font-bold mb-8">
               Apartments for sale
             </h1>
           </div>

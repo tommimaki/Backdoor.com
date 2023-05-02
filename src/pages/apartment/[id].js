@@ -1,0 +1,40 @@
+// pages/apartment/[id].js
+import { useRouter } from "next/router";
+import axios from "axios";
+import Layout from "../../components/Layout";
+
+const Apartment = ({ apartment }) => {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
+
+  // JSX code to display the apartment information
+};
+
+export async function getStaticPaths() {
+  const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}apartments`);
+  const apartments = res.data;
+  const paths = apartments.map((apartment) => ({
+    params: { id: apartment._id },
+  }));
+
+  return { paths, fallback: true };
+}
+
+export async function getStaticProps({ params }) {
+  const res = await axios.get(
+    `${process.env.NEXT_PUBLIC_API_URL}apartments/${params.id}`
+  );
+  const apartment = res.data;
+
+  return {
+    props: {
+      apartment,
+    },
+    revalidate: 60,
+  };
+}
+
+export default Apartment;
