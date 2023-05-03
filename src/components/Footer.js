@@ -8,16 +8,21 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap justify-between items-center">
           <div className="w-full md:w-1/3 mb-4 md:mb-0">
-            <h3 className="text-xl font-semibold mb-2">Backdoor</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-              nisl eros, pulvinar facilisis justo mollis, auctor consequat urna.
+            <h3 className="text-xl font-heading font-semibold mb-2">
+              Backdoor
+            </h3>
+            <p className="font-text">
+              Welcome to Backdoor Homes, where we blend contemporary design with
+              everyday practicality to create the perfect living space for you
+              and your family.
             </p>
           </div>
 
           <div className="w-full md:w-1/3 mb-4 md:mb-0">
-            <h3 className="text-xl font-semibold mb-2">Quick Links</h3>
-            <ul className="text-sm">
+            <h3 className="text-xl font-semibold font-heading  mb-2">
+              Quick Links
+            </h3>
+            <ul className="text-sm font-text">
               <li className="mb-2">
                 <Link href="/">
                   <p>Home</p>
@@ -37,9 +42,11 @@ const Footer = () => {
           </div>
 
           <div className="w-full md:w-1/3">
-            <h3 className="text-xl font-semibold mb-2">Contact Us</h3>
-            <p>
-              123 Street Name, City, State, Country <br />
+            <h3 className="text-xl font-heading  font-semibold mb-2">
+              Contact Us
+            </h3>
+            <p className="font-text">
+              123 Flemari, Helsinki, Uusimaa, Finland <br />
               Email: info@example.com <br />
               Phone: +1 (123) 456-7890
             </p>
@@ -50,7 +57,7 @@ const Footer = () => {
 
         <div className="text-center">
           <p className="text-sm">
-            &copy; {new Date().getFullYear()} Company Name. All Rights Reserved.
+            &copy; {new Date().getFullYear()} Tommi Mäki
           </p>
         </div>
       </div>
