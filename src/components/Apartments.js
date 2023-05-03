@@ -23,10 +23,15 @@ export default function Apartments() {
     <div id="apartments" className="bg-bgLight w-full min-h-screen ">
       <div className="wrapper flex flex-col">
         <div className="mx-auto p-10">
-          <div className="text-right">
+          <div className="text-right flex flex-col">
             <h1 class="text-7xl text-textDark font-heading font-bold mb-8">
               Apartments for sale
             </h1>
+            <div className="w-1/3 self-end">
+              <Link href={"/apartments"}>
+                <button className="orangeButton w-full mb-10">See All</button>
+              </Link>
+            </div>
           </div>
           <div className="relative">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-4 z-10">
