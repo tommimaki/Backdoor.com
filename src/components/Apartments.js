@@ -10,7 +10,6 @@ export default function Apartments() {
           `${process.env.NEXT_PUBLIC_API_URL}apartments`
         );
         setApartments(response.data);
-        console.log(response.data);
       } catch (error) {
         console.error("Error fetching apartments", error.message);
       }

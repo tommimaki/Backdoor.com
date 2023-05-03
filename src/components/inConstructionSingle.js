@@ -1,17 +1,18 @@
 // components/UnfinishedProjectPage.js
-import React from "react";
+import React, { useState } from "react";
 import Layout from "./Layout";
 import ProjectCarousel from "./ProjectCarousel";
 import dynamic from "next/dynamic";
 import { parseISO, format } from "date-fns";
 import SmoothDropdown from "./SmoothDropdown";
+import Timeline from "./Timeline";
 
 const DynamicLeafletMap = dynamic(() => import("../components/LeafletMap"), {
   ssr: false,
 });
 
 const InConstructionSingle = ({ project }) => {
-  console.log(project, "inconstruciton");
+  const [showFullDescription, setShowFullDescription] = useState(false);
   return (
     <Layout>
       <div className="wrapper bg-bgLight ">
@@ -26,7 +27,16 @@ const InConstructionSingle = ({ project }) => {
               <h1 className="text-5xl font-heading font-extrabold mb-5">
                 {project.title}
               </h1>
-              <p className="text-xl font-text mb-4">{project.description[0]}</p>
+              {project.description.split("\n").map((paragraph, index) => {
+                if (!showFullDescription && index > 0) {
+                  return null;
+                }
+                return (
+                  <p key={index} className="text-xl font-text mb-4">
+                    {paragraph}
+                  </p>
+                );
+              })}
               <SmoothDropdown description={project.description} />
             </div>
           </div>
@@ -69,7 +79,7 @@ const InConstructionSingle = ({ project }) => {
           <div className="w-1/2 h-full">
             <DynamicLeafletMap location={project} />
           </div>
-
+          <Timeline finishingDate={project.finishingDate} />
           <div className="bg-bgLight  mx-20">
             {project && <ProjectCarousel project={project} />}
           </div>
