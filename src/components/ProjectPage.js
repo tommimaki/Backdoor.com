@@ -15,7 +15,7 @@ const ProjectPage = ({ project }) => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [showFullDescription, setShowFullDescription] = useState(false);
 
-  console.log(project);
+  console.log(project, "projectpage");
   return (
     <Layout>
       <div className="wrapper bg-bgLight ">

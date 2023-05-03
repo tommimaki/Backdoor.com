@@ -1,7 +1,14 @@
-// components/LeafletMap.js
-
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import L from "leaflet";
+
+// Set the default icon options
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: "/leaflet/marker-icon-2x.png",
+  iconUrl: "/leaflet/marker-icon.png",
+  shadowUrl: "/leaflet/marker-shadow.png",
+});
 
 const LeafletMap = ({ location }) => {
   const { title, address, mapLat = 60.1674, mapLng = 24.9414 } = location;

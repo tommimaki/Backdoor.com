@@ -4,12 +4,14 @@ import Layout from "./Layout";
 import ProjectCarousel from "./ProjectCarousel";
 import dynamic from "next/dynamic";
 import { parseISO, format } from "date-fns";
+import SmoothDropdown from "./SmoothDropdown";
 
-const DynamicLeafletMap = dynamic(() => import("./LeafletMap"), {
+const DynamicLeafletMap = dynamic(() => import("../components/LeafletMap"), {
   ssr: false,
 });
 
 const InConstructionSingle = ({ project }) => {
+  console.log(project, "inconstruciton");
   return (
     <Layout>
       <div className="wrapper bg-bgLight ">
@@ -24,13 +26,14 @@ const InConstructionSingle = ({ project }) => {
               <h1 className="text-5xl font-heading font-extrabold mb-5">
                 {project.title}
               </h1>
-              <p className="text-xl font-text mb-4">{project.description}</p>
+              <p className="text-xl font-text mb-4">{project.description[0]}</p>
+              <SmoothDropdown description={project.description} />
             </div>
           </div>
 
           <div className="my-10 h-44">
             <h3 className="text-3xl text-center font-heading font-semibold ">
-              Project Details:
+              Project Details :
             </h3>
             <div className="flex items-center justify-center h-full">
               <ul className="grid grid-cols-2 gap-2 ">

@@ -29,6 +29,15 @@ const FinishedProjects = () => {
           <h1 className="text-7xl  font-heading text-textDark  font-bold mb-8">
             Finished Projects
           </h1>
+          <div className="mb-8">
+            <p className="text-xl font-text text-textDark mb-4">
+              We are proud of the projects we have built and the impact they
+              have made in the community.
+            </p>
+            <Link href="/projects">
+              <button className="orangeButton">View All Projects</button>
+            </Link>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
             {projects.map((project) => (
               <Link key={project._id} href={`/project/${project._id}`}>

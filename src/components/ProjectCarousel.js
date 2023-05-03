@@ -44,7 +44,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 const ProjectCarousel = ({ project }) => {
-  console.log(project);
   return (
     <Carousel
       showArrows
