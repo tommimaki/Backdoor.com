@@ -34,7 +34,7 @@ const FinishedProjects = () => {
               <Link key={project._id} href={`/project/${project._id}`}>
                 <div
                   key={project.id}
-                  className="bg-white shadow-lg rounded-lg p-6"
+                  className="bg-white shadow-lg hover:shadow-accent rounded-lg p-6"
                 >
                   <img
                     // src={project.image}

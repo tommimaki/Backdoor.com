@@ -22,7 +22,7 @@ body {
   @apply text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2;
 }
 .orangeButton {
-  @apply bg-accent text-white font-text border border-accent rounded-md px-4 py-2 mt-2 hover:bg-bgDark;
+  @apply bg-accent text-white font-text border border-accent rounded-md px-4 py-2 mt-2 hover:bg-bgDark transition duration-150 ease-in-out;
 }
 .clip-polygon {
   clip-path: polygon(0 0, 100% 29%, 100% 88%, 0 61%);

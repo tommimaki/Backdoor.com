@@ -5,6 +5,7 @@ import Sites from "../components/Sites";
 import FinishedProjects from '../components/FinishedProjects';
 import Apartments from '../components/Apartments';
 import WhyUs from '../components/WhyUs'
+import Newsletter from '../components/Newsletter'
 
 export default function Home() {
 
@@ -68,6 +69,7 @@ export default function Home() {
       <FinishedProjects />
       <Apartments />
       <WhyUs />
+      <Newsletter />
     </Layout >
   );
 }

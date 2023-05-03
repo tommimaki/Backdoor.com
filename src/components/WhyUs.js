@@ -76,7 +76,7 @@ export default function WhyUs() {
     // Add more categories here
   ];
   return (
-    <div className="bg-bgDark mb-10">
+    <div className="bg-bgDark pb-20">
       <h1 className=" text-center p-10 font-heading text-5xl ">
         Why Choose Us?
       </h1>

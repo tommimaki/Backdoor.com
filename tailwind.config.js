@@ -21,6 +21,9 @@ module.exports = {
         accent: "#D35C38",
         textDark: "#403732",
       },
+      boxShadow: {
+        accent: "4px 6px 6px rgba(211,92,56,0.2)",
+      },
       fontFamily: {
         text: ["Quicksand", "sans-serif"],
         heading: ["Secular One", "sans-serif"],

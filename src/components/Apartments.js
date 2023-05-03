@@ -34,7 +34,7 @@ export default function Apartments() {
                 <Link
                   key={apartment._id}
                   href={`/apartment/${apartment._id}`}
-                  className="block rounded-lg p-4 shadow-sm bg-white  shadow-indigo-200"
+                  className="block rounded-lg p-4 shadow-sm bg-white hover:shadow-accent  shadow-indigo-200"
                 >
                   <img
                     alt={apartment.title}

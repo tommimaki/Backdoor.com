@@ -60,17 +60,23 @@ export default function Sites() {
       </div>
       <div className="container grid grid-cols-2 gap-5 mt-8">
         {sites.map((site) => (
-          <div key={site._id} className="bg-white shadow-lg rounded-lg p-6">
-            <img
-              src={site.images[0]}
-              alt={site.title}
-              className="w-full h-48 object-cover mb-4 rounded-lg"
-            />
-            <h2 className="text-2xl font-semibold text-textDark font-heading mb-4">
-              {site.title}
-            </h2>
-            <p className="font-text text-textDark">{site.description}</p>
-
+          <div
+            key={site._id}
+            className="bg-white shadow-lg hover:shadow-accent flex flex-col justify-between rounded-lg p-6"
+          >
+            <div>
+              <img
+                src={site.images[0]}
+                alt={site.title}
+                className="w-full h-48 object-cover mb-4 rounded-lg"
+              />
+              <h2 className="text-2xl font-semibold text-textDark font-heading mb-4">
+                {site.title}
+              </h2>
+              <p className="font-text text-textDark">
+                {site.description.split("\n\n")[0]}
+              </p>
+            </div>
             <div className="mt-4">
               <h3 className="text-xl font-semibold text-textDark mb-2">
                 Project Details:
@@ -101,6 +107,9 @@ export default function Sites() {
                   </p>
                 </li>
               </ul>
+              <Link href={`/inconstruction/${site._id}`}>
+                <button className="orangeButton w-full">See Project</button>
+              </Link>
             </div>
           </div>
         ))}
@@ -108,45 +117,3 @@ export default function Sites() {
     </div>
   );
 }
-
-/* <ol class="items-center sm:flex">
-    <li class="relative mb-6 sm:mb-0">
-        <div class="flex items-center">
-            <div class="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0">
-                <svg aria-hidden="true" class="w-3 h-3 text-blue-800 dark:text-blue-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
-            </div>
-            <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
-        </div>
-        <div class="mt-3 sm:pr-8">
-            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Flowbite Library v1.0.0</h3>
-            <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Released on December 2, 2021</time>
-            <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements.</p>
-        </div>
-    </li>
-    <li class="relative mb-6 sm:mb-0">
-        <div class="flex items-center">
-            <div class="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0">
-                <svg aria-hidden="true" class="w-3 h-3 text-blue-800 dark:text-blue-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
-            </div>
-            <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
-        </div>
-        <div class="mt-3 sm:pr-8">
-            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Flowbite Library v1.2.0</h3>
-            <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Released on December 23, 2021</time>
-            <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements.</p>
-        </div>
-    </li>
-    <li class="relative mb-6 sm:mb-0">
-        <div class="flex items-center">
-            <div class="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0">
-                <svg aria-hidden="true" class="w-3 h-3 text-blue-800 dark:text-blue-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
-            </div>
-            <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
-        </div>
-        <div class="mt-3 sm:pr-8">
-            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Flowbite Library v1.3.0</h3>
-            <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Released on January 5, 2022</time>
-            <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements.</p>
-        </div>
-    </li>
-</ol> */

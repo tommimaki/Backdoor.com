@@ -5,6 +5,7 @@ import VisitingDayPicker from "./VisitingDayPicker";
 import dynamic from "next/dynamic";
 import SmoothDropdown from "./SmoothDropdown";
 import ProjectCarousel from "./ProjectCarousel";
+import Link from "next/link";
 
 const DynamicLeafletMap = dynamic(() => import("../components/LeafletMap"), {
   ssr: false,
@@ -184,7 +185,9 @@ const ProjectPage = ({ project }) => {
                     <td className="px-2 py-4">{apartment.floor}</td>
                     <td className="px-2 py-4">
                       {" "}
-                      <button className="orangeButton"> See Apartment</button>
+                      <Link href={`/apartment/${apartment._id}`}>
+                        <button className="orangeButton"> See Apartment</button>
+                      </Link>
                     </td>
                   </tr>
                 ))}

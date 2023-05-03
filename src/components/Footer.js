@@ -56,8 +56,14 @@ const Footer = () => {
         <hr className="my-4" />
 
         <div className="text-center">
-          <p className="text-sm">
-            &copy; {new Date().getFullYear()} Tommi Mäki
+          <p className="text-sm text-accent">
+            <a
+              href="https://tommimaki.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              &copy; {new Date().getFullYear()} Tommi Mäki
+            </a>
           </p>
         </div>
       </div>
