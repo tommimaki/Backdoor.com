@@ -1,6 +1,13 @@
+import { useState } from "react";
 import Link from "next/link";
 
 export default function Header({ isVisible }) {
+  const [menuVisible, setMenuVisible] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuVisible(!menuVisible);
+  };
+
   return (
     <header
       className={`fixed top-0 h-20 left-0 w-full z-50 transition-all duration-200 ${
@@ -31,9 +38,8 @@ export default function Header({ isVisible }) {
             </h2>
           </div>
         </Link>
-
-        <div className=" mr-20 p-5 mt-4 inline-flex items-center text-amber-950 rounded-full border-2 ">
-          <Link href="/">
+        <div className="mr-20 p-5 mt-4 inline-flex items-center text-amber-950 rounded-full border-2">
+          <button onClick={toggleMenu}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -48,9 +54,80 @@ export default function Header({ isVisible }) {
                 d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
               />
             </svg>
-          </Link>
+          </button>
         </div>
       </div>
+
+      {menuVisible && (
+        <div className="fixed top-0 left-0 w-full h-full  bg-bgDark z-40 flex justify-center items-center">
+          <nav className="text-2xl text-white">
+            <button
+              onClick={toggleMenu}
+              className="absolute top-4 right-4 text-white"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-28 h-28"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+
+            <ul>
+              <li className="mb-5 text-white">
+                <Link href="/">
+                  <p className=" text-textDark" onClick={toggleMenu}>
+                    Home
+                  </p>
+                </Link>
+              </li>
+              <li className="mb-5 text-white">
+                <Link href="/apartments">
+                  <p className=" text-textDark" onClick={toggleMenu}>
+                    Apartments For Sale
+                  </p>
+                </Link>
+              </li>
+              <li className="mb-5 text-white">
+                <Link href="/projects">
+                  <p className=" text-textDark" onClick={toggleMenu}>
+                    Finished Projects
+                  </p>
+                </Link>
+              </li>
+              <li className="mb-5 text-white">
+                <Link href="/inconstruction">
+                  <p className=" text-textDark" onClick={toggleMenu}>
+                    Projects In Construction
+                  </p>
+                </Link>
+              </li>
+              <li className="mb-5 text-white">
+                <Link href="/about">
+                  <p className=" text-textDark" onClick={toggleMenu}>
+                    About Us
+                  </p>
+                </Link>
+              </li>
+              <li className="mb-5 text-white">
+                <Link href="/contact">
+                  <p className=" text-textDark" onClick={toggleMenu}>
+                    Contact Us
+                  </p>
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
