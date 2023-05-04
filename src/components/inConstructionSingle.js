@@ -15,7 +15,7 @@ const InConstructionSingle = ({ project }) => {
   const [showFullDescription, setShowFullDescription] = useState(false);
   return (
     <Layout>
-      <div className="wrapper ">
+      <div className="wrapper pt-20 ">
         <div className="container min-h-screen mx-auto ">
           <img
             src={project.images[0]}
@@ -46,7 +46,6 @@ const InConstructionSingle = ({ project }) => {
           </h3>
           <div className="flex items-center justify-center h-full">
             <ul className="grid grid-cols-2 gap-2 ">
-              {/* Add other details as necessary */}
               <li className="flex gap-1">
                 <p>
                   Address: <br /> <b>{project.address}</b>

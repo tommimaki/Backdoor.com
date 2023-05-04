@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 
 const ImageCarousel = ({ imageUrls }) => {
-  console.log(imageUrls);
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handlePrev = () => {
@@ -37,10 +36,10 @@ const ImageCarousel = ({ imageUrls }) => {
       </div>
       <button
         type="button"
-        class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        className="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
         onClick={handlePrev}
       >
-        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-accent  group-hover:bg-bgLight group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-accent  group-hover:bg-bgLight group-focus:ring-4 group-focus:ring-white  group-focus:outline-none">
           <svg
             aria-hidden="true"
             className="w-8 h-8 text-accent"
@@ -56,18 +55,18 @@ const ImageCarousel = ({ imageUrls }) => {
               d="M15 19l-7-7 7-7"
             ></path>
           </svg>
-          <span class="sr-only">Previous</span>
+          <span className="sr-only">Previous</span>
         </span>
       </button>
       <button
         type="button"
-        class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        className="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
         onClick={handleNext}
       >
-        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-accent  group-hover:bg-bgLight group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-accent  group-hover:bg-bgLight group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
           <svg
             aria-hidden="true"
-            class="w-6 h-6 text-white dark:text-gray-800"
+            className="w-6 h-6 text-white"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -80,7 +79,7 @@ const ImageCarousel = ({ imageUrls }) => {
               d="M9 5l7 7-7 7"
             ></path>
           </svg>
-          <span class="sr-only">Next</span>
+          <span className="sr-only">Next</span>
         </span>
       </button>
     </div>
