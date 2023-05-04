@@ -1,0 +1,90 @@
+// components/ImageCarousel.js
+import React, { useState } from "react";
+
+const ImageCarousel = ({ imageUrls }) => {
+  console.log(imageUrls);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handlePrev = () => {
+    setActiveIndex((prevActiveIndex) =>
+      prevActiveIndex === 0 ? imageUrls.length - 1 : prevActiveIndex - 1
+    );
+  };
+
+  const handleNext = () => {
+    setActiveIndex((prevActiveIndex) =>
+      prevActiveIndex === imageUrls.length - 1 ? 0 : prevActiveIndex + 1
+    );
+  };
+
+  return (
+    <div id="gallery" className="relative w-full" data-carousel="slide">
+      <div className="relative min-h-screen overflow-hidden rounded-lg md:h-96">
+        {imageUrls.map((imageUrl, index) => (
+          <div
+            key={index}
+            className={`${
+              index === activeIndex ? "inline-block" : "hidden"
+            } duration-700 ease-in-out`}
+          >
+            <img
+              src={imageUrl}
+              className="absolute inline-block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              alt=""
+            />
+          </div>
+        ))}
+      </div>
+      <button
+        type="button"
+        class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        onClick={handlePrev}
+      >
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-accent  group-hover:bg-bgLight group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+          <svg
+            aria-hidden="true"
+            className="w-8 h-8 text-accent"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M15 19l-7-7 7-7"
+            ></path>
+          </svg>
+          <span class="sr-only">Previous</span>
+        </span>
+      </button>
+      <button
+        type="button"
+        class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        onClick={handleNext}
+      >
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-accent  group-hover:bg-bgLight group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+          <svg
+            aria-hidden="true"
+            class="w-6 h-6 text-white dark:text-gray-800"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M9 5l7 7-7 7"
+            ></path>
+          </svg>
+          <span class="sr-only">Next</span>
+        </span>
+      </button>
+    </div>
+  );
+};
+
+export default ImageCarousel;

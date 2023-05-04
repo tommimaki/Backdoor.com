@@ -1,24 +1,26 @@
 import { useState } from "react";
 import Link from "next/link";
 
-export default function Header({ isVisible }) {
+export default function Header({ isVisible, onLandingPage }) {
   const [menuVisible, setMenuVisible] = useState(false);
 
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
   };
 
+  const headerBg = onLandingPage
+    ? "bg-transparent"
+    : "bg-bgDark pointer-events-auto";
+
   return (
     <header
-      className={`fixed top-0 h-20 left-0 w-full z-50 transition-all duration-200 ${
-        isVisible
-          ? " opacity-100 pointer-events-auto"
-          : "invisible opacity-0 pointer-events-none"
+      className={`fixed top-0 h-20 left-0 w-full z-50 transition-all duration-200 ${headerBg} ${
+        isVisible ? "opacity-100" : "invisible opacity-0 pointer-events-none"
       }`}
     >
-      <div className="flex justify-between">
+      <div className="flex justify-between ">
         <Link href="/">
-          <div className="flex flex-col p-3 text-amber-950 items-center text-lg justify-center ml-20 mt-4  rounded-full border-2">
+          <div className="flex flex-col  text-amber-950 items-center text-lg justify-center ml-20 mt-2 ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -38,7 +40,7 @@ export default function Header({ isVisible }) {
             </h2>
           </div>
         </Link>
-        <div className="mr-20 p-5 mt-4 inline-flex items-center text-amber-950 rounded-full border-2">
+        <div className="mr-20   inline-flex items-center text-textDark ">
           <button onClick={toggleMenu}>
             <svg
               xmlns="http://www.w3.org/2000/svg"

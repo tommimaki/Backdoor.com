@@ -14,7 +14,7 @@ export default function Home() {
     section?.scrollIntoView({ behavior: "smooth" });
   };
   return (
-    <Layout>
+    <Layout onLandingPage={true}>
       <main className="flex flex-col bg-bgDark">
         <div className="absolute left-0 top-0 z-10 sm:pl-20 sm:pt-40 p-5 w-full flex flex-col">
           <h1 className="text-textDark font-heading  text-9xl">We Build </h1>
