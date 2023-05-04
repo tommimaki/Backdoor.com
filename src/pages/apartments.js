@@ -44,6 +44,11 @@ const Apartments = () => {
 
     fetchData();
   }, []);
+  const getUniqueLocations = (parentProjects) => {
+    const locations = parentProjects.map((project) => project.location);
+    return [...new Set(locations)];
+  };
+  const uniqueLocations = getUniqueLocations(parentProjects);
 
   useEffect(() => {
     const filtered = apartments.filter((apartment, index) => {
@@ -79,6 +84,10 @@ const Apartments = () => {
   return (
     <Layout>
       <div className="relative px-8  py-32">
+        <h1 className="font-heading text-5xl mb-10 text-center">
+          {" "}
+          All Our Apartments Available For Sale!
+        </h1>
         <Filter
           onFilterChange={(name, value) =>
             setFilters((prevFilters) => ({
@@ -87,6 +96,7 @@ const Apartments = () => {
             }))
           }
           filters={filters}
+          locations={uniqueLocations}
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-4 z-10">
           {filteredApartments?.map((apartment) => (

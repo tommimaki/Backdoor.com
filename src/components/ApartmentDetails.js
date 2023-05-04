@@ -4,6 +4,7 @@ import ImageCarousel from "./ImageCarousel";
 import BottomBanner from "./BottomBanner";
 import Link from "next/link";
 import Seller from "./Seller";
+import VisitingDayPicker from "./VisitingDayPicker";
 
 const ApartmentDetails = (props) => {
   const { apartment, parentProject } = props;
@@ -110,7 +111,12 @@ const ApartmentDetails = (props) => {
           </Link>
         </div>
       </div>
-      <Seller />
+      <div className="flex flex-col mx-auto justify-center">
+        <Seller />
+        <div className="w-1/2 mx-auto mb-10">
+          <VisitingDayPicker />
+        </div>
+      </div>
       <BottomBanner />
     </div>
   );

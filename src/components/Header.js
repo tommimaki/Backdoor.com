@@ -10,7 +10,7 @@ export default function Header({ isVisible, onLandingPage }) {
 
   const headerBg = onLandingPage
     ? "bg-transparent"
-    : "bg-bgDark pointer-events-auto";
+    : "bg-bgDark pointer-events-auto shadow-lg";
 
   return (
     <header

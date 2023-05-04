@@ -1,14 +1,26 @@
 import React, { useState } from "react";
 import { CSSTransition } from "react-transition-group";
 
-const Filter = ({ onFilterChange, filters }) => {
+const Filter = ({ onFilterChange, filters, locations }) => {
   const [showPriceDropdown, setShowPriceDropdown] = useState(false);
   const [showAreaDropdown, setShowAreaDropdown] = useState(false);
   const [minArea, setMinArea] = useState("");
   const [maxArea, setMaxArea] = useState("");
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
+  const [selectedLocation, setSelectedLocation] = useState("");
 
+  const handleLocationChange = (e) => {
+    setSelectedLocation(e.target.value);
+    onFilterChange("location", e.target.value);
+  };
+
+  const resetAllFilters = () => {
+    resetPriceFilter();
+    resetAreaFilter();
+    setSelectedLocation("");
+    onFilterChange("location", "");
+  };
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -48,7 +60,7 @@ const Filter = ({ onFilterChange, filters }) => {
   };
 
   return (
-    <div className="flex flex-wrap gap-4 mb-8">
+    <div className="flex flex-wrap justify-center gap-4 mb-8">
       <div className="relative">
         <button
           onClick={() => setShowPriceDropdown(!showPriceDropdown)}
@@ -161,18 +173,28 @@ const Filter = ({ onFilterChange, filters }) => {
         </CSSTransition>
       </div>
 
-      <div>
-        <label htmlFor="location" className="mr-2">
+      <div className="border-accent border-b-2 rounded-sm mt-1">
+        <label htmlFor="location" className="mr-2 ">
           Location:
         </label>
-        <input
-          type="text"
+        <select
           name="location"
           id="location"
-          onChange={handleChange}
-          className="border border-gray-300 px-2 py-1 rounded-md"
-        />
+          value={selectedLocation}
+          onChange={handleLocationChange}
+          className="border border-gray-300 px-2 py-1 mt-3 rounded-md"
+        >
+          <option value="">All Locations</option>
+          {locations.map((location, index) => (
+            <option key={index} value={location}>
+              {location}
+            </option>
+          ))}
+        </select>
       </div>
+      <button onClick={resetAllFilters} className="orangeButton">
+        Reset All Filters
+      </button>
     </div>
   );
 };

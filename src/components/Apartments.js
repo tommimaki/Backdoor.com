@@ -29,10 +29,15 @@ export default function Apartments() {
             <h1 class="text-7xl text-textDark font-heading font-bold mb-8">
               Apartments for sale
             </h1>
-            <div className="w-1/3 self-end">
-              <Link href={"/apartments"}>
-                <button className="orangeButton w-full mb-10">See All</button>
-              </Link>
+            <div className="flex justify-between">
+              <div>
+                <h2 className="text-4xl font-heading">New Apartments:</h2>
+              </div>
+              <div className="w-1/3 self-end">
+                <Link href={"/apartments"}>
+                  <button className="orangeButton w-full mb-10">See All</button>
+                </Link>
+              </div>
             </div>
           </div>
           <div className="relative">
