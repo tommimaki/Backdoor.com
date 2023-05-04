@@ -19,7 +19,9 @@ const Apartment = ({ apartment }) => {
 
 export async function getStaticPaths() {
   const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}apartments`);
-  const apartments = res.data;
+  const data = res.data;
+
+  const apartments = data.map((item) => item.apartment);
 
   const paths = apartments.map((apartment) => ({
     params: { id: apartment._id },

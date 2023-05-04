@@ -9,7 +9,9 @@ export default function Apartments() {
         const response = await axios.get(
           `${process.env.NEXT_PUBLIC_API_URL}apartments`
         );
-        setApartments(response.data);
+
+        const apartmentData = response.data.map((item) => item.apartment);
+        setApartments(apartmentData);
         console.log(response.data);
       } catch (error) {
         console.error("Error fetching apartments", error.message);
