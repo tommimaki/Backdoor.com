@@ -12,8 +12,6 @@ const ApartmentDetails = (props) => {
   const apt = apartment.apartment;
   const parent = apartment.parentProject;
 
-  console.log(apartment.parentProject);
-
   //   const [apartment, setApartment] = useState(apartment.apartment);
   return (
     <div className="apartment-details pt-6 overflow-hidden bg-bgLight ">

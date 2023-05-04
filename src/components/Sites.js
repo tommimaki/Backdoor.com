@@ -78,10 +78,10 @@ export default function Sites() {
               </p>
             </div>
             <div className="mt-4">
-              <h3 className="text-xl font-semibold text-textDark mb-2">
+              <h3 className="text-xl pl-10 font-semibold text-textDark mb-2">
                 Project Details:
               </h3>
-              <ul className="grid grid-cols-2 gap-2">
+              <ul className="grid grid-cols-2 md:pl-12 gap-2">
                 <li className="flex gap-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

@@ -2,10 +2,12 @@
 import React, { useState } from "react";
 import Layout from "./Layout";
 import ProjectCarousel from "./ProjectCarousel";
+import ImageCarousel from "./ImageCarousel";
 import dynamic from "next/dynamic";
 import { parseISO, format } from "date-fns";
 import SmoothDropdown from "./SmoothDropdown";
 import Timeline from "./Timeline";
+import Seller from "./Seller";
 
 const DynamicLeafletMap = dynamic(() => import("../components/LeafletMap"), {
   ssr: false,
@@ -15,13 +17,14 @@ const InConstructionSingle = ({ project }) => {
   const [showFullDescription, setShowFullDescription] = useState(false);
   return (
     <Layout>
-      <div className="wrapper pt-20 ">
-        <div className="container min-h-screen mx-auto ">
+      <div className="wrapper bg-bgLight pt-20 ">
+        <div className="container min-h-screen bg-bgLight mx-auto ">
           <img
             src={project.images[0]}
             alt={project.title}
             className="w-full h-full object-cover"
           />
+
           <div className="text-center p-6 bg-bgDark bg-opacity-90 rounded-b-xl">
             <h1 className="text-5xl font-heading font-extrabold mb-5">
               {project.title}
@@ -86,8 +89,9 @@ const InConstructionSingle = ({ project }) => {
             </div>
           </div>
         </div>
-        <div className="bg-bgLight  mx-20">
-          {project && <ProjectCarousel project={project} />}
+        <Seller />
+        <div className="bg-bgLight px-10  ">
+          <ImageCarousel imageUrls={project.images} />
         </div>
       </div>
     </Layout>

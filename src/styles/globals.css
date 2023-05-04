@@ -53,3 +53,7 @@ body {
 .accent-icon {
   stroke: #d35c38;
 }
+
+.headerz {
+  z-index: 5000;
+}

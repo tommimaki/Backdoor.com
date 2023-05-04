@@ -88,8 +88,8 @@ const Apartments = () => {
           {" "}
           All Our Apartments Available For Sale!
         </h1>
-        <h3 className="font-text text-3xl text-center mb-10">
-          Find your new home here
+        <h3 className="font-text text-3xl text-center mb-4">
+          Find your new home!
         </h3>
         <Filter
           onFilterChange={(name, value) =>
@@ -130,7 +130,7 @@ const Apartments = () => {
                   </div>
                 </dl>
 
-                <div className="mt-6 grid grid-cols-2 gap-8 text-xs">
+                <div className="mt-6 grid grid-cols-2 gap-8 pl-8 text-xs">
                   <div className="flex gap-1 ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

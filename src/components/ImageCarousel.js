@@ -3,6 +3,7 @@ import React, { useState } from "react";
 
 const ImageCarousel = ({ imageUrls }) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  console.log(imageUrls);
 
   const handlePrev = () => {
     setActiveIndex((prevActiveIndex) =>

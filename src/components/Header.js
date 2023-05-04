@@ -10,11 +10,11 @@ export default function Header({ isVisible, onLandingPage }) {
 
   const headerBg = onLandingPage
     ? "bg-transparent"
-    : "bg-bgDark pointer-events-auto shadow-lg";
+    : "bg-bgDark pointer-events-auto";
 
   return (
     <header
-      className={`fixed top-0 h-20 left-0 w-full z-50 transition-all duration-200 ${headerBg} ${
+      className={` headerz fixed top-0 h-20 left-0 w-full z-50 transition-all duration-200 ${headerBg} ${
         isVisible ? "opacity-100" : "invisible opacity-0 pointer-events-none"
       }`}
     >

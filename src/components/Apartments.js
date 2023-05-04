@@ -3,16 +3,26 @@ import axios from "axios";
 import Link from "next/link";
 export default function Apartments() {
   const [apartments, setApartments] = useState([]);
+  const [parentProjects, setParentProjects] = useState([]);
   useEffect(() => {
     async function fetchData() {
       try {
         const response = await axios.get(
           `${process.env.NEXT_PUBLIC_API_URL}apartments`
         );
+        const apartmentData = response.data.map((item) => {
+          return {
+            ...item.apartment,
+            parentProject: item.parentProject,
+          };
+        });
 
-        const apartmentData = response.data.map((item) => item.apartment);
+        const parentProjectData = response.data.map(
+          (item) => item.parentProject
+        );
         setApartments(apartmentData);
-        console.log(response.data);
+        setParentProjects(parentProjectData);
+        setFilteredApartments(apartmentData);
       } catch (error) {
         console.error("Error fetching apartments", error.message);
       }
@@ -26,7 +36,7 @@ export default function Apartments() {
       <div className="wrapper flex flex-col">
         <div className="mx-auto p-10">
           <div className="text-right flex flex-col">
-            <h1 class="text-7xl text-textDark font-heading font-bold mb-8">
+            <h1 className="text-7xl text-textDark font-heading font-bold mb-8">
               Apartments for sale
             </h1>
             <div className="flex justify-between">
@@ -42,32 +52,41 @@ export default function Apartments() {
           </div>
           <div className="relative">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-4 z-10">
-              {apartments?.map((apartment) => (
-                <Link
-                  key={apartment._id}
-                  href={`/apartment/${apartment._id}`}
-                  className="block rounded-lg p-4 shadow-sm bg-white hover:shadow-accent  shadow-indigo-200"
-                >
-                  <img
-                    alt={apartment.title}
-                    src={apartment.images[0]}
-                    className="h-56 w-full rounded-md object-cover"
-                  />
-                  <div className="mt-2">
-                    <dl>
-                      <div>
-                        <dt className="sr-only">Title</dt>
-                        <dd className="text-sm text-gray-500">
-                          {apartment.title}
-                        </dd>
-                      </div>
-                      <div>
-                        <dt className="sr-only">Description</dt>
-                        <dd className="font-medium">{apartment.description}</dd>
-                      </div>
-                    </dl>
-                    <div className="mt-6 flex items-center gap-8 justify- text-xs">
-                      <div className="sm:inline-flex sm:shrink-0 sm:items-center  sm:gap-2">
+              {apartments?.slice(0, 6).map((apartment) => (
+                <div key={apartment._id} className="relative">
+                  <Link
+                    key={apartment._id}
+                    href={`/apartment/${apartment._id}`}
+                    className="block rounded-lg p-4 shadow-sm bg-white hover:shadow-accent  shadow-indigo-200"
+                  >
+                    <div className=" absolute top-0 right-0 bg bg-orange-500 text-white px-2 py-2 text-xs font-bold uppercase rounded-bl">
+                      New
+                    </div>
+                    <img
+                      alt={apartment.title}
+                      src={apartment.images[0]}
+                      className="h-56 w-full rounded-md object-cover"
+                    />
+                    <div className="mt-2">
+                      <dl>
+                        <div className="flex px-2 justify-between">
+                          <dt className="sr-only">Title</dt>
+                          <dd className="text-sm text-gray-500">
+                            {apartment.title}
+                          </dd>
+                          <dd className="text-sm text-gray-500">
+                            {apartment.parentProject.title}
+                          </dd>
+                        </div>
+                        <div>
+                          <dt className="sr-only">Description</dt>
+                          <dd className="font-medium text-center">
+                            {apartment.description}
+                          </dd>
+                        </div>
+                      </dl>
+
+                      <div className="mt-6 grid grid-cols-2 gap-8 pl-8  text-xs">
                         <div className="flex gap-1 ">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -135,10 +154,33 @@ export default function Apartments() {
                             </dd>
                           </div>
                         </div>
+
+                        <div className="flex gap-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={1.5}
+                            stroke="currentColor"
+                            className="w-10 h-10 accent-icon"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z"
+                            />
+                          </svg>
+                          <div>
+                            <dt className="">Location:</dt>
+                            <dd className="text-sm text-gray-500">
+                              <b>{apartment.parentProject.location}</b>
+                            </dd>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </Link>
+                  </Link>
+                </div>
               ))}
             </div>
             {apartments?.length === 0 && (

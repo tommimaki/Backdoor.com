@@ -44,8 +44,7 @@ const FinishedProjects = () => {
                   className="bg-white shadow-lg hover:shadow-accent rounded-lg p-6"
                 >
                   <img
-                    // src={project.image}
-                    src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                    src={project.images[0]}
                     alt={project.title}
                     className="w-full h-48 object-cover mb-4 rounded-lg"
                   />
