@@ -40,7 +40,7 @@ const Apartments = () => {
   }, []);
 
   useEffect(() => {
-    const filtered = apartments.filter((apartment) => {
+    const filtered = apartments.filter((apartment, index) => {
       if (filters.price && apartment.sellingPrice > parseFloat(filters.price)) {
         return false;
       }
@@ -58,7 +58,7 @@ const Apartments = () => {
       }
       if (
         filters.location &&
-        !apartment.location
+        !parentProjects[index].location
           .toLowerCase()
           .includes(filters.location.toLowerCase())
       ) {
