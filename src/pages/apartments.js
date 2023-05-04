@@ -88,6 +88,9 @@ const Apartments = () => {
           {" "}
           All Our Apartments Available For Sale!
         </h1>
+        <h3 className="font-text text-3xl text-center mb-10">
+          Find your new home here
+        </h3>
         <Filter
           onFilterChange={(name, value) =>
             setFilters((prevFilters) => ({
