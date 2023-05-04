@@ -7,11 +7,14 @@ import Filter from "../components/Filter";
 
 const Apartments = () => {
   const [apartments, setApartments] = useState([]);
+  const [parentProjects, setParentProjects] = useState([]);
   const [filteredApartments, setFilteredApartments] = useState([]);
   const [filters, setFilters] = useState({
     price: null,
     area: null,
     location: null,
+    minPrice: null,
+    minArea: null,
   });
 
   useEffect(() => {
@@ -20,8 +23,13 @@ const Apartments = () => {
         const response = await axios.get(
           `${process.env.NEXT_PUBLIC_API_URL}apartments`
         );
-        setApartments(response.data);
-        setFilteredApartments(response.data);
+        const apartmentData = response.data.map((item) => item.apartment);
+        const parentProjectData = response.data.map(
+          (item) => item.parentProject
+        );
+        setApartments(apartmentData);
+        setParentProjects(parentProjectData);
+        setFilteredApartments(apartmentData);
         console.log(response.data);
       } catch (error) {
         console.error("Error fetching apartments", error.message);
@@ -31,28 +39,21 @@ const Apartments = () => {
     fetchData();
   }, []);
 
-  const handleFilterChange = (name, value) => {
-    setFilters((prevFilters) => ({
-      ...prevFilters,
-      [name]: value,
-    }));
-
-    const newFilteredApartments = apartments.filter((apartment) => {
-      const maxPrice = filters.price ? parseInt(filters.price) : Infinity;
-      const maxArea = filters.area ? parseInt(filters.area) : Infinity;
-
-      return apartment.sellingPrice <= maxPrice && apartment.area <= maxArea;
-    });
-
-    setFilteredApartments(newFilteredApartments);
-  };
-
   useEffect(() => {
     const filtered = apartments.filter((apartment) => {
       if (filters.price && apartment.sellingPrice > parseFloat(filters.price)) {
         return false;
       }
+      if (
+        filters.minPrice &&
+        apartment.sellingPrice < parseFloat(filters.minPrice)
+      ) {
+        return false;
+      }
       if (filters.area && apartment.area > parseFloat(filters.area)) {
+        return false;
+      }
+      if (filters.minArea && apartment.area < parseFloat(filters.minArea)) {
         return false;
       }
       if (
@@ -71,10 +72,18 @@ const Apartments = () => {
 
   return (
     <Layout>
-      <div className="relative py-20">
-        <Filter onFilterChange={handleFilterChange} />
+      <div className="relative px-8  py-32">
+        <Filter
+          onFilterChange={(name, value) =>
+            setFilters((prevFilters) => ({
+              ...prevFilters,
+              [name]: value,
+            }))
+          }
+          filters={filters}
+        />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-4 z-10">
-          {filteredApartments?.map((apartment) => (
+          {filteredApartments?.map((apartment, index) => (
             <Link
               key={apartment._id}
               href={`/apartment/${apartment._id}`}
@@ -162,6 +171,12 @@ const Apartments = () => {
                         <dt className="">Area:</dt>
                         <dd className="text-sm text-gray-500">
                           <b>{apartment.area}m2</b>
+                        </dd>
+                      </div>
+                      <div>
+                        <dt className="">Location:</dt>
+                        <dd className="text-sm text-gray-500">
+                          <b>{parentProjects[index].location}</b>
                         </dd>
                       </div>
                     </div>
