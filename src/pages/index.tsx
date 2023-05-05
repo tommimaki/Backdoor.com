@@ -6,6 +6,7 @@ import FinishedProjects from '../components/FinishedProjects';
 import Apartments from '../components/Apartments';
 import WhyUs from '../components/WhyUs'
 import Newsletter from '../components/Newsletter'
+import Head from "next/head";
 
 export default function Home() {
 
@@ -15,16 +16,22 @@ export default function Home() {
   };
   return (
     <Layout onLandingPage={true}>
+      <Head>
+        <title>Backdoor Homes</title>
+      </Head>
       <main className="flex flex-col bg-bgDark">
-        <div className="absolute left-0 top-0 z-10 sm:pl-20 sm:pt-40 p-5 w-full flex flex-col">
-          <h1 className="text-textDark font-heading  text-9xl">We Build </h1>
-          <h2 className="text-white ml-6 font-heading font-quicksand text-5xl">
+        <div className="absolute left-0 top-0 z-10 sm:pl-20 sm:pt-40 pl-10 sm:mt-0 mt-72 w-full flex flex-col">
+          {/* todo opacity largescreen 0 bghn */}
+          <div className=" sm:bg-none bg-bgLight md:opacity-50 rounded-l-lg shadow-accent ">
+            <h1 className="sm:text-textDark   md:text-7xl  p-4 font-heading  text-5xl sm:text-6xl   lg:text-9xl">We Build </h1>
+          </div>
+          <h2 className="text-white ml-6 mt-2 font-heading font-quicksand sm:text-5xl text-3xl">
             You&nbsp;
-            <b className="text-white">
+            <b className="text-white ">
               Live
             </b>
           </h2>
-          <h3 className="font-text text-accent text-2xl ml-10"> -Backdoor</h3>
+          <h3 className="font-text text-accent sm:text-2xl text-xl ml-6 sm:ml-10"> -Backdoor</h3>
         </div>
         <div
           className="min-h-screen min-w-full relative clip-triangle"
@@ -35,8 +42,9 @@ export default function Home() {
           }}
         >
         </div>
-        <div className="absolute bottom-0 left-0 w-full flex flex-wrap justify-around p-5">
-          <div className="content-box border-2 border-accent bg-bgLight p-5 h-62 shadow-lg rounded-lg overflow-wrap max-w-xs flex flex-col justify-center">
+        {/* todo md: boxlayout  */}
+        <div className="lg:absolute gap-2 bottom-0 left-0 w-full flex flex-wrap justify-around p-5">
+          <div className="content-box border-2 border-accent bg-bgLight p-5 sm:h-62 shadow-lg rounded-lg overflow-wrap max-w-xs flex flex-col justify-center">
             <h3 className="text-textDark  font-heading  text-center text-2xl">Current Projects</h3>
             <p className="text-textDark font-text pt-4">Check out our latest projects, including a new residential complex, a commercial office tower, and a public park renovation.</p>
             <button onClick={() => scrollToSection("sites")} className="bg-accent text-white font-text border w-full border-accent rounded-md px-4 py-2 mt-2 hover:bg-bgDark">

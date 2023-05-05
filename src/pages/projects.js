@@ -3,6 +3,7 @@ import axios from "axios";
 import Link from "next/link";
 import Layout from "../components/Layout";
 import ProjectFilter from "../components/ProjectFilter";
+import Head from "next/head";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -49,6 +50,9 @@ const Projects = () => {
 
   return (
     <Layout>
+      <Head>
+        <title>Projects</title>
+      </Head>
       <div className="relative px-8  py-32">
         <h1 className="font-heading text-5xl mb-10 text-center">
           All Our Projects

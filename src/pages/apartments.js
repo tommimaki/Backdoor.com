@@ -4,6 +4,8 @@ import axios from "axios";
 import Link from "next/link";
 import Layout from "../components/Layout";
 import Filter from "../components/Filter";
+import Seller from "../components/Seller";
+import Head from "next/head";
 
 const Apartments = () => {
   const [apartments, setApartments] = useState([]);
@@ -83,13 +85,16 @@ const Apartments = () => {
 
   return (
     <Layout>
+      <Head>
+        <title>Apartments - Backdoor Homes</title>
+      </Head>
       <div className="relative px-8  py-32">
-        <h1 className="font-heading text-5xl mb-10 text-center">
+        <h1 className="font-heading sm:text-5xl text-3xl mb-10 text-center">
           {" "}
           All Our Apartments Available For Sale!
         </h1>
-        <h3 className="font-text text-3xl text-center mb-4">
-          Find your new home!
+        <h3 className="font-text  sm:text-3xl text-xl text-center mb-4">
+          What is your new home like?
         </h3>
         <Filter
           onFilterChange={(name, value) =>
@@ -232,6 +237,7 @@ const Apartments = () => {
           </div>
         )}
       </div>
+      <Seller />
     </Layout>
   );
 };

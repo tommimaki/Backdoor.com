@@ -1,18 +1,37 @@
 // pages/contact.tsx
 import React from "react";
 import Layout from "../components/Layout";
-
+import Head from "next/head";
+import Newsletter from "../components/Newsletter";
 const Contact = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Handle form submission logic here
+    //TODO Handle form submission logic here
     console.log("Form submitted");
   };
 
   return (
     <Layout>
-      <div className="container min-h-screen mx-auto p-6">
-        <h1 className="text-4xl mb-8">Contact Us</h1>
+      <Head>
+        <title> Contact Us!</title>
+      </Head>
+      <div className="container pt-28 min-h-screen mx-auto p-6">
+        <h1 className="sm:text-4xl text-2xl font-heading mb-8">Contact Us</h1>
+
+        <div>
+          <h2 className="font-text">
+            {" "}
+            If you have questions about aquiring properties or want to ask us
+            about anything else, dont hesitate to be in touch!
+            <br></br>
+            <h3>
+              {" "}
+              <br></br>
+              <b>We are here for you!</b>
+            </h3>
+            <br></br>
+          </h2>
+        </div>
         <form onSubmit={handleSubmit} className="w-full max-w-lg">
           <div className="mb-6">
             <label htmlFor="name" className="block mb-2">
@@ -48,15 +67,13 @@ const Contact = () => {
             ></textarea>
           </div>
           <div className="mb-6">
-            <button
-              type="submit"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            >
+            <button type="submit" className="orangeButton">
               Submit
             </button>
           </div>
         </form>
       </div>
+      <Newsletter />
     </Layout>
   );
 };

@@ -6,6 +6,8 @@ import Layout from "../components/Layout";
 import { parseISO, format } from "date-fns";
 import Seller from "../components/Seller";
 import Newsletter from "../components/Newsletter";
+import Head from "next/head";
+
 const UnfinishedProjects = () => {
   const [sites, setSites] = useState([]);
   const [showMore, setShowMore] = useState(false);
@@ -32,13 +34,16 @@ const UnfinishedProjects = () => {
 
   return (
     <Layout>
+      <Head>
+        <title>In Construction</title>
+      </Head>
       <div
         id="unfinishedProjects"
-        className="bg-bgDark pt-20 w-full flex-grow z-0"
+        className="bg-bgDark pt-28 w-full flex-grow "
       >
         <div className="wrapper flex flex-col ">
           <div className="container mx-auto p-4 z-10">
-            <h1 className="text-7xl font-heading text-textDark font-bold mb-8">
+            <h1 className="sm:text-7xl text-3xl font-heading text-textDark font-bold mb-8">
               Projects In Construction
             </h1>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">

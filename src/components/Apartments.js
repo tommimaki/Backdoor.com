@@ -34,14 +34,16 @@ export default function Apartments() {
   return (
     <div id="apartments" className="bg-bgLight w-full min-h-screen ">
       <div className="wrapper flex flex-col">
-        <div className="mx-auto p-10">
+        <div className="mx-auto w-full p-10">
           <div className="text-right flex flex-col">
-            <h1 className="text-7xl text-textDark font-heading font-bold mb-8">
+            <h1 className="md:text-7xl text-3xl text-textDark font-heading font-bold mb-8">
               Apartments for sale
             </h1>
             <div className="flex justify-between">
-              <div>
-                <h2 className="text-4xl font-heading">New Apartments:</h2>
+              <div className="w-full text-left">
+                <h2 className=" sm:text-4xl text-left text-xl font-heading">
+                  New Apartments
+                </h2>
               </div>
               <div className="w-1/3 self-end">
                 <Link href={"/apartments"}>

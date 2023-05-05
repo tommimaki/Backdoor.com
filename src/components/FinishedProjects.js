@@ -24,7 +24,7 @@ const FinishedProjects = () => {
     <div id="finishedProjects" className="bg-bgDark  w-full  flex-grow z-0">
       <div className="wrapper  flex flex-col ">
         <div className="container mx-auto p-4 z-10">
-          <h1 className="text-7xl  font-heading text-textDark  font-bold mb-8">
+          <h1 className="sm:text-7xl text-3xl  font-heading text-textDark  font-bold mb-8">
             Finished Projects
           </h1>
           <div className="mb-8">

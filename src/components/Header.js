@@ -10,7 +10,7 @@ export default function Header({ isVisible, onLandingPage }) {
 
   const headerBg = onLandingPage
     ? "bg-transparent"
-    : "bg-bgDark shadow-lg pointer-events-auto";
+    : "bg-bgDark shadow-md pointer-events-auto";
 
   return (
     <header
@@ -73,7 +73,7 @@ export default function Header({ isVisible, onLandingPage }) {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="w-28 h-28"
+                className="w-28 h-28 hover:bg-bgLight rounded-full"
               >
                 <path
                   strokeLinecap="round"
@@ -86,42 +86,60 @@ export default function Header({ isVisible, onLandingPage }) {
             <ul>
               <li className="mb-5 text-white">
                 <Link href="/">
-                  <p className=" text-textDark" onClick={toggleMenu}>
+                  <p
+                    className=" text-textDark hover:bg-bgLight hover:text-accent hover:shadow-accent p-2 rounded-lg"
+                    onClick={toggleMenu}
+                  >
                     Home
                   </p>
                 </Link>
               </li>
               <li className="mb-5 text-white">
                 <Link href="/apartments">
-                  <p className=" text-textDark" onClick={toggleMenu}>
+                  <p
+                    className=" text-textDark  hover:bg-bgLight hover:text-accent hover:shadow-accent p-2 rounded-lg"
+                    onClick={toggleMenu}
+                  >
                     Apartments For Sale
                   </p>
                 </Link>
               </li>
               <li className="mb-5 text-white">
                 <Link href="/projects">
-                  <p className=" text-textDark" onClick={toggleMenu}>
+                  <p
+                    className=" text-textDark  hover:bg-bgLight hover:text-accent hover:shadow-accent p-2 rounded-lg"
+                    onClick={toggleMenu}
+                  >
                     Finished Projects
                   </p>
                 </Link>
               </li>
               <li className="mb-5 text-white">
                 <Link href="/inconstruction">
-                  <p className=" text-textDark" onClick={toggleMenu}>
+                  <p
+                    className=" text-textDark  hover:bg-bgLight hover:text-accent hover:shadow-accent p-2 rounded-lg"
+                    onClick={toggleMenu}
+                  >
                     Projects In Construction
                   </p>
                 </Link>
               </li>
               <li className="mb-5 text-white">
                 <Link href="/about">
-                  <p className=" text-textDark" onClick={toggleMenu}>
+                  <p
+                    className=" text-textDark  hover:bg-bgLight hover:text-accent hover:shadow-accent p-2 rounded-lg"
+                    onClick={toggleMenu}
+                  >
                     About Us
                   </p>
                 </Link>
               </li>
               <li className="mb-5 text-white">
                 <Link href="/contact">
-                  <p className=" text-textDark" onClick={toggleMenu}>
+                  <p
+                    className=" text-textDark  hover:bg-bgLight hover:text-accent hover:shadow-accent p-2 rounded-lg"
+                    onClick={toggleMenu}
+                  >
                     Contact Us
                   </p>
                 </Link>

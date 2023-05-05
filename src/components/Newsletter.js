@@ -29,7 +29,7 @@ export default function Newsletter() {
             <div className="grow-0 shrink-0 basis-auto hidden lg:flex lg:w-6/12 xl:w-4/12">
               <img
                 src="https://images.unsplash.com/photo-1601074231509-dce351c05199?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80"
-                alt="Trendy Pants and Shoes"
+                alt="Construction Site"
                 className="w-full"
               />
             </div>

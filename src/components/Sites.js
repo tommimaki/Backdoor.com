@@ -29,15 +29,15 @@ export default function Sites() {
       id="sites"
       className="min-h-screen flex flex-col pb-10 items-center bg-bgLight justify-center"
     >
-      <div className="container grid grid-cols-2  gap-5 h-full">
+      <div className="container grid sm:grid-cols-2  gap-5 h-full">
         {/* Left column: Carousel */}
-        <div className="carousel h-full mt-32 flex-1">
+        <div className="carousel h-full sm:mt-32  flex-1">
           <ProjectCarousel project={sites[0]} />
         </div>
 
         {/* Right column: Info box */}
-        <div className="info-box h-full mt-32 flex-1">
-          <h2 className="text-5xl font-heading text-textDark font-bold mb-16">
+        <div className="info-box h-full sm:mt-32 p-4 flex-1">
+          <h2 className="sm:text-5xl text-3xl font-heading text-textDark font-bold mb-16">
             Current Building Projects
           </h2>
           <p className="font-text text-xl mb-16">
@@ -56,7 +56,7 @@ export default function Sites() {
 
       {/* Projects */}
       <div className="text-left w-full mx-auto ml-20 pt-10">
-        <h2 className="font-heading text-5xl">Featured </h2>
+        <h2 className="font-heading text-2xl sm:text-5xl">Featured </h2>
       </div>
       <div className="container grid lg:grid-cols-2 grid-cols-1  p-5 sm:p-0 gap-5 mt-8">
         {sites.map((site) => (
