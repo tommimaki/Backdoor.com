@@ -58,7 +58,7 @@ export default function Sites() {
       <div className="text-left w-full mx-auto ml-20 pt-10">
         <h2 className="font-heading text-5xl">Featured </h2>
       </div>
-      <div className="container grid sm:grid-cols-2 grid-cols-1  p-5 sm:p-0 gap-5 mt-8">
+      <div className="container grid lg:grid-cols-2 grid-cols-1  p-5 sm:p-0 gap-5 mt-8">
         {sites.map((site) => (
           <div
             key={site._id}

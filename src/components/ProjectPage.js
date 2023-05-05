@@ -17,7 +17,7 @@ const ProjectPage = ({ project }) => {
 
   return (
     <Layout>
-      <div className="wrapper bg-bgLight ">
+      <div className="wrapper pt-20 bg-bgLight ">
         <div className="container min-h-screen mx-auto  p-4s">
           <div className=" w-full h-full mb-4 overflow-hidden">
             <img

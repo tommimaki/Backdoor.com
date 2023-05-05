@@ -52,6 +52,8 @@ body {
 
 .accent-icon {
   stroke: #d35c38;
+  min-width: 32px;
+  min-height: 32px;
 }
 
 .headerz {

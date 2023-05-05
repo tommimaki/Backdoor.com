@@ -130,7 +130,7 @@ const Apartments = () => {
                   </div>
                 </dl>
 
-                <div className="mt-6 grid grid-cols-2 gap-8 pl-8 text-xs">
+                <div className="mt-6 grid grid-cols-2 gap-8  text-xs">
                   <div className="flex gap-1 ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
