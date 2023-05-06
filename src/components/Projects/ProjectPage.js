@@ -1,13 +1,13 @@
 // components/ProjectPage.js
 import React, { useState } from "react";
-import Layout from "./Layout";
-import VisitingDayPicker from "./VisitingDayPicker";
+import Layout from "../Layout/Layout";
+import VisitingDayPicker from "../Misc/VisitingDayPicker";
 import dynamic from "next/dynamic";
-import SmoothDropdown from "./SmoothDropdown";
-import ProjectCarousel from "./ProjectCarousel";
+import SmoothDropdown from "../functional/SmoothDropdown";
+import ProjectCarousel from "../functional/ProjectCarousel";
 import Link from "next/link";
 
-const DynamicLeafletMap = dynamic(() => import("../components/LeafletMap"), {
+const DynamicLeafletMap = dynamic(() => import("../Misc/LeafletMap"), {
   ssr: false,
 });
 

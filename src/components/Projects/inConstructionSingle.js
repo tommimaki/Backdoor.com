@@ -1,15 +1,15 @@
 // components/UnfinishedProjectPage.js
 import React, { useState } from "react";
-import Layout from "./Layout";
-import ProjectCarousel from "./ProjectCarousel";
-import ImageCarousel from "./ImageCarousel";
+import Layout from "../Layout/Layout";
+import ProjectCarousel from "../functional/ProjectCarousel";
+import ImageCarousel from "../functional/ImageCarousel";
 import dynamic from "next/dynamic";
 import { parseISO, format } from "date-fns";
-import SmoothDropdown from "./SmoothDropdown";
-import Timeline from "./Timeline";
-import Seller from "./Seller";
+import SmoothDropdown from "../functional/SmoothDropdown";
+import Timeline from "../Misc/Timeline";
+import Seller from "../Misc/Seller";
 
-const DynamicLeafletMap = dynamic(() => import("../components/LeafletMap"), {
+const DynamicLeafletMap = dynamic(() => import("../Misc/LeafletMap"), {
   ssr: false,
 });
 

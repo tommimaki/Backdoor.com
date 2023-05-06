@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import axios from "axios";
-import InConstructionSingle from "../../components/InConstructionSingle";
-import Layout from "../../components/Layout";
+import InConstructionSingle from "../../components/Projects/inConstructionSingle";
+import Layout from "../../components/Layout/Layout";
 
 const InConstruction = ({ project }) => {
   const router = useRouter();

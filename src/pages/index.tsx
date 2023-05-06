@@ -1,11 +1,11 @@
 import Image from "next/image";
 import bg from "../assets/bg.jpg";
-import Layout from "../components/Layout";
-import Sites from "../components/Sites";
-import FinishedProjects from '../components/FinishedProjects';
-import Apartments from '../components/Apartments';
-import WhyUs from '../components/WhyUs'
-import Newsletter from '../components/Newsletter'
+import Layout from "../components/Layout/Layout";
+import Sites from "../components/Projects/Sites";
+import FinishedProjects from '../components/Projects/FinishedProjects';
+import Apartments from '../components/Apartments/Apartments';
+import WhyUs from '../components/Misc/WhyUs'
+import Newsletter from '../components/Misc/Newsletter'
 import Head from "next/head";
 
 export default function Home() {
@@ -22,7 +22,7 @@ export default function Home() {
       <main className="flex flex-col bg-bgDark">
         <div className="absolute left-0 top-0 z-10 sm:pl-20 sm:pt-40 pl-10 sm:mt-0 mt-72 w-full flex flex-col">
           {/* todo opacity largescreen 0 bghn */}
-          <div className=" sm:bg-none bg-bgLight md:opacity-50 rounded-l-lg shadow-accent ">
+          <div className=" sm:bg-none bg-bgLight  rounded-l-lg shadow-accent ">
             <h1 className="sm:text-textDark   md:text-7xl  p-4 font-heading  text-5xl sm:text-6xl   lg:text-9xl">We Build </h1>
           </div>
           <h2 className="text-white ml-6 mt-2 font-heading font-quicksand sm:text-5xl text-3xl">

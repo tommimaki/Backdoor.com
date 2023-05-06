@@ -1,8 +1,8 @@
 // pages/apartment/[id].js
 import { useRouter } from "next/router";
 import axios from "axios";
-import Layout from "../../components/Layout";
-import ApartmentDetails from "../../components/ApartmentDetails";
+import Layout from "../../components/Layout/Layout";
+import ApartmentDetails from "../../components/Apartments/ApartmentDetails";
 const Apartment = ({ apartment }) => {
   const router = useRouter();
 

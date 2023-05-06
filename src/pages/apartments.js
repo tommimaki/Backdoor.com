@@ -2,9 +2,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
-import Layout from "../components/Layout";
-import Filter from "../components/Filter";
-import Seller from "../components/Seller";
+import Layout from "../components/Layout/Layout";
+import Filter from "../components/Apartments/Filter";
+import Seller from "../components/Misc/Seller";
 import Head from "next/head";
 
 const Apartments = () => {

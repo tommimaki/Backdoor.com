@@ -1,9 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import Head from "next/head";
-import Layout from "../components/Layout";
-import Newsletter from "../components/Newsletter";
-import WhyUs from "../components/WhyUs";
+import Layout from "../components/Layout/Layout";
+import Newsletter from "../components/Misc/Newsletter";
+import WhyUs from "../components/Misc/WhyUs";
 
 const About = () => {
   return (

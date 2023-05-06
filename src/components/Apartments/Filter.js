@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { CSSTransition } from "react-transition-group";
-import ProjectFilter from "./ProjectFilter";
+import ProjectFilter from "../Projects/ProjectFilter";
 
 const Filter = ({ onFilterChange, filters, locations }) => {
   const [showPriceDropdown, setShowPriceDropdown] = useState(false);

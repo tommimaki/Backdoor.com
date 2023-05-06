@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { parseISO, format } from "date-fns";
-import ProjectCarousel from "./ProjectCarousel";
+import ProjectCarousel from "../functional/ProjectCarousel";
 import Link from "next/link";
 
 export default function Sites() {

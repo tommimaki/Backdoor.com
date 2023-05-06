@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
-import Layout from "../components/Layout";
-import ProjectFilter from "../components/ProjectFilter";
+import Layout from "../components/Layout/Layout";
+import ProjectFilter from "../components/Projects/ProjectFilter";
 import Head from "next/head";
 
 const Projects = () => {

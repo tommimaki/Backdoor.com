@@ -1,8 +1,8 @@
 // pages/project/[id].js
 import { useRouter } from "next/router";
 import axios from "axios";
-import ProjectPage from "../../components/ProjectPage";
-import Layout from "../../components/Layout";
+import ProjectPage from "../../components/Projects/ProjectPage";
+import Layout from "../../components/Layout/Layout";
 
 const Project = ({ project }) => {
   const router = useRouter();

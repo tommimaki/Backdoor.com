@@ -1,10 +1,10 @@
 // components/ApartmentDetails.js
 import React, { useState } from "react";
-import ImageCarousel from "./ImageCarousel";
-import BottomBanner from "./BottomBanner";
+import ImageCarousel from "../functional/ImageCarousel";
+import BottomBanner from "../Misc/BottomBanner";
 import Link from "next/link";
-import Seller from "./Seller";
-import VisitingDayPicker from "./VisitingDayPicker";
+import Seller from "../Misc/Seller";
+import VisitingDayPicker from "../Misc/VisitingDayPicker";
 
 const ApartmentDetails = (props) => {
   const { apartment, parentProject } = props;

@@ -1,8 +1,8 @@
 // pages/contact.tsx
 import React from "react";
-import Layout from "../components/Layout";
+import Layout from "../components/Layout/Layout";
 import Head from "next/head";
-import Newsletter from "../components/Newsletter";
+import Newsletter from "../components/Misc/Newsletter";
 const Contact = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
