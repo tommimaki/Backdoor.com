@@ -42,33 +42,57 @@ export default function Home() {
           }}
         >
         </div>
-        {/* todo md: boxlayout  */}
-        <div className="lg:absolute gap-2 bottom-0 left-0 w-full flex flex-wrap justify-around p-5">
-          <div className="content-box border-2 border-accent bg-bgLight p-5 sm:h-62 shadow-lg rounded-lg overflow-wrap max-w-xs flex flex-col justify-center">
+        {/* 
+        <div className="lg:absolute gap-2 bottom-0 left-0 w-full flex flex-col sm:flex-row items-center justify-around p-5">
+          <div className="content-box border-2 border-accent bg-bgLight p-5  h-62 shadow-lg rounded-lg overflow-wrap w-3/4 lg:max-w-xs flex flex-col justify-center">
             <h3 className="text-textDark  font-heading  text-center text-2xl">Current Projects</h3>
-            <p className="text-textDark font-text pt-4">Check out our latest projects, including a new residential complex, a commercial office tower, and a public park renovation.</p>
+            <p className="text-textDark hidden md:block font-text pt-4">Check out our latest projects, including a new residential complex, a commercial office tower, and a public park renovation.</p>
             <button onClick={() => scrollToSection("sites")} className="bg-accent text-white font-text border w-full border-accent rounded-md px-4 py-2 mt-2 hover:bg-bgDark">
               Take me there
             </button>
           </div>
 
 
-          <div className="content-box border-2 border-accent bg-bgLight p-5 h-62 shadow-lg rounded-lg overflow-wrap max-w-xs flex flex-col justify-center">
+          <div className="content-box border-2 border-accent bg-bgLight p-5  h-62 shadow-lg rounded-lg overflow-wrap w-3/4 lg:max-w-xs flex flex-col justify-center">
             <h3 className=" text-center font-heading text-2xl">Finished Projects</h3>
-            <p className="text-gray-700 font-text pt-4">Take a look at our past completed projects, including a luxury hotel, a sports arena, and a university campus expansion.</p>
+            <p className="text-gray-700 hidden md:block  font-text pt-4">Take a look at our past completed projects, including a luxury hotel, a sports arena, and a university campus expansion.</p>
             <button onClick={() => scrollToSection("finishedProjects")} className="bg-accent text-white font-text border w-full border-accent rounded-md px-4 py-2 mt-2 hover:bg-bgDark">
               Take me there
             </button>
           </div>
 
-          <div className="content-box border-2 border-accent bg-bgLight p-5 h-62 shadow-lg rounded-lg overflow-wrap max-w-xs flex flex-col justify-center">
+          <div className="content-box border-2 border-accent bg-bgLight p-5 h-62 shadow-lg rounded-lg overflow-wrap  w-3/4 md:max-w-xs flex flex-col justify-center">
             <h3 className=" text-center  font-heading  text-2xl">Apartments For Sale</h3>
-            <p className="text-textDark font-text  pt-4">Explore our selection of apartments for sale, ranging from cozy studios to spacious penthouses, in prime locations around the city.</p>
+            <p className="text-textDark font-text hidden md:block  pt-4">Explore our selection of apartments for sale, ranging from cozy studios to spacious penthouses, in prime locations around the city.</p>
             <button onClick={() => scrollToSection("apartments")} className="bg-accent text-white font-text border w-full border-accent rounded-md px-4 py-2 mt-2 hover:bg-bgDark">
               Take me there
             </button>
           </div>
+        </div> */}
+        <div className="lg:absolute gap-2 bottom-0 left-0 w-full flex flex-col md:flex-row items-center justify-around p-5">
+          <div className="content-box border-2 border-accent bg-bgLight p-5 h-62 shadow-lg rounded-lg overflow-wrap w-3/4 sm:w-2/3 flex flex-col justify-center">
+            <h3 className="text-textDark  font-heading  text-center text-2xl">Current Projects</h3>
+            <p className="text-textDark hidden lg:block font-text pt-4">Check out our latest projects, including a new residential complex, a commercial office tower, and a public park renovation.</p>
+            <button onClick={() => scrollToSection("sites")} className="bg-accent text-white font-text border w-full border-accent rounded-md px-4 py-2 mt-2 hover:bg-bgDark">
+              Take me there
+            </button>
+          </div>
 
+          <div className="content-box border-2 border-accent bg-bgLight p-5 h-62 shadow-lg rounded-lg overflow-wrap w-3/4  sm:w-2/3   flex flex-col justify-center">
+            <h3 className=" text-center font-heading text-2xl">Finished Projects</h3>
+            <p className="text-gray-700 hidden lg:block font-text pt-4">Take a look at our past completed projects, including a luxury hotel, a sports arena, and a university campus expansion.</p>
+            <button onClick={() => scrollToSection("finishedProjects")} className="bg-accent text-white font-text border w-full border-accent rounded-md px-4 py-2 mt-2 hover:bg-bgDark">
+              Take me there
+            </button>
+          </div>
+
+          <div className="content-box border-2 border-accent bg-bgLight p-5 h-62 shadow-lg rounded-lg overflow-wrap w-3/4 sm:w-2/3   flex flex-col justify-center">
+            <h3 className=" text-center  font-heading  text-2xl">Apartments For Sale</h3>
+            <p className="text-textDark hidden lg:block font-text pt-4">Explore our selection of apartments for sale, ranging from cozy studios to spacious penthouses, in prime locations around the city.</p>
+            <button onClick={() => scrollToSection("apartments")} className="bg-accent text-white font-text border w-full border-accent rounded-md px-4 py-2 mt-2 hover:bg-bgDark">
+              Take me there
+            </button>
+          </div>
         </div>
 
 

@@ -19,7 +19,7 @@ const ImageCarousel = ({ imageUrls }) => {
 
   return (
     <div id="gallery" className="relative w-full" data-carousel="slide">
-      <div className="relative min-h-screen overflow-hidden rounded-lg md:h-96">
+      <div className="relative  min-h-[300px] md:min-h-screen overflow-hidden  ">
         {imageUrls.map((imageUrl, index) => (
           <div
             key={index}
@@ -29,8 +29,8 @@ const ImageCarousel = ({ imageUrls }) => {
           >
             <img
               src={imageUrl}
-              className="absolute inline-block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              alt=""
+              className="absolute inline-block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              alt="apartment"
             />
           </div>
         ))}

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Seller() {
   return (
-    <div className="bg-bg mb-10 w-full py-10 px-6 flex justify-center gap-20 items-center ">
+    <div className="bg-bg my-5 w-full py-2 px-6 flex justify-center gap-20 items-center ">
       <div className="flex items-center space-x-4">
         <img
           className="w-10 h-10 rounded-full"

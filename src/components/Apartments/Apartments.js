@@ -53,7 +53,7 @@ export default function Apartments() {
             </div>
           </div>
           <div className="relative">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-4 z-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4  gap-4 z-10">
               {apartments?.slice(0, 6).map((apartment) => (
                 <div key={apartment._id} className="relative">
                   <Link

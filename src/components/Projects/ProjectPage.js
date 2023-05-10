@@ -5,6 +5,7 @@ import VisitingDayPicker from "../Misc/VisitingDayPicker";
 import dynamic from "next/dynamic";
 import SmoothDropdown from "../functional/SmoothDropdown";
 import ProjectCarousel from "../functional/ProjectCarousel";
+import ImageCarousel from "../functional/ImageCarousel";
 import Link from "next/link";
 
 const DynamicLeafletMap = dynamic(() => import("../Misc/LeafletMap"), {
@@ -12,7 +13,6 @@ const DynamicLeafletMap = dynamic(() => import("../Misc/LeafletMap"), {
 });
 
 const ProjectPage = ({ project }) => {
-  const [selectedDate, setSelectedDate] = useState(new Date());
   const [showFullDescription, setShowFullDescription] = useState(false);
 
   return (
@@ -143,7 +143,7 @@ const ProjectPage = ({ project }) => {
             </div>
           </div>
 
-          <div className="relative overflow-x-auto mb-10 shadow-md sm:rounded-lg">
+          <div className="relative overflow-x-auto mb-10 mx-4 shadow-md sm:rounded-lg">
             <h2 className="text-3xl font-heading mb-4">Available Apartments</h2>
             <table className="w-full text-sm text-left text-gray-500 ">
               <thead className="text-xs text-gray-700 uppercase bg-gray-50 ">
@@ -194,16 +194,17 @@ const ProjectPage = ({ project }) => {
             </table>
           </div>
         </div>
-        <div className="flex p-10 bg-bgDark ">
-          <div className="w-1/2 pr-4">
+        <div className="flex flex-col sm:flex-row p-10 bg-bgDark">
+          <div className="w-full sm:w-1/2 pr-0 sm:pr-4 mb-4 sm:mb-0">
             <VisitingDayPicker />
           </div>
-          <div className="w-1/2 h-full">
+          <div className="w-full sm:w-1/2 h-full">
             <DynamicLeafletMap location={project} />
           </div>
         </div>
-        <div className="bg-bgLight  mx-20">
-          {project && <ProjectCarousel project={project} />}
+
+        <div className="bg-bgLight sm:mx-210 ">
+          <ImageCarousel imageUrls={project.images} />
         </div>
       </div>
     </Layout>

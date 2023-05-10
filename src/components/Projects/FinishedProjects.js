@@ -36,7 +36,7 @@ const FinishedProjects = () => {
               <button className="orangeButton">View All Projects</button>
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-10">
             {projects.map((project) => (
               <Link key={project._id} href={`/project/${project._id}`}>
                 <div
@@ -51,7 +51,6 @@ const FinishedProjects = () => {
                   <h2 className="text-2xl font-semibold mb-4">
                     {project.title}
                   </h2>
-                  {/* <p>{project.description}</p> */}
 
                   <div className="mt-4">
                     <h3 className="text-xl  font-semibold mb-2">

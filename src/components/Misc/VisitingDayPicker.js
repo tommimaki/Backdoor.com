@@ -1,5 +1,6 @@
 // components/VisitingDayPicker.js
 import { useState } from "react";
+import axios from "axios";
 
 const VisitingDayPicker = () => {
   const [selectedDate, setSelectedDate] = useState("");
@@ -11,14 +12,61 @@ const VisitingDayPicker = () => {
     setSelectedDate(event.target.value);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setShowSuccess(true);
-    //TODO connect to backend
-    setTimeout(() => {
-      setShowSuccess(false);
-    }, 5000);
+  const isValidInput = () => {
+    const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+    const phonePattern = /^\+?[\d\s\-()]+$/;
+
+    if (
+      !name.trim() ||
+      !email.trim() ||
+      !emailPattern.test(email) ||
+      !phone.trim() ||
+      !phonePattern.test(phone) ||
+      !selectedDate
+    ) {
+      return false;
+    }
+
+    const currentDate = new Date();
+    const selectedDateObj = new Date(selectedDate);
+    currentDate.setHours(0, 0, 0, 0);
+
+    if (selectedDateObj <= currentDate) {
+      return false;
+    }
+
+    return true;
   };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (!isValidInput()) {
+      alert("Please enter valid input.");
+      return;
+    }
+
+    try {
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_URL}visit-requests`,
+        {
+          name,
+          email,
+          phone,
+          date: selectedDate,
+        }
+      );
+
+      if (response.status === 200 || response.status === 201) {
+        setShowSuccess(true);
+        setTimeout(() => {
+          setShowSuccess(false);
+        }, 10000);
+      }
+    } catch (error) {
+      console.error("Error submitting visit request", error.message);
+    }
+  };
+
   return (
     <div>
       <h3 className="text-2xl text-center mb-4 font-semibold ">
@@ -104,6 +152,7 @@ const VisitingDayPicker = () => {
           id="date"
           value={selectedDate}
           onChange={handleDateChange}
+          min={new Date().toISOString().split("T")[0]}
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-4"
         />
         <button className="bg-accent text-white font-text  border w-full border-accent rounded-md px-4 py-2 hover:bg-bgLight hover:text-black">

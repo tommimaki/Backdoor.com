@@ -79,18 +79,18 @@ const InConstructionSingle = ({ project }) => {
 
         <div className="flex  p-10 w-full flex-grow-1 bg-bgDark">
           <div className="container mx-auto">
-            <div className="flex">
-              <div className="w-1/2 h-full">
+            <div className="flex flex-col sm:flex-row">
+              <div className="w-full sm:w-1/2 mb-4 sm:mb-0">
                 <Timeline finishingDate={project.finishingDate} />
               </div>
-              <div className="w-1/2 h-full">
+              <div className="w-full sm:w-1/2 h-full">
                 <DynamicLeafletMap location={project} />
               </div>
             </div>
           </div>
         </div>
         <Seller />
-        <div className="bg-bgLight px-10  ">
+        <div className="bg-bgLight px-2">
           <ImageCarousel imageUrls={project.images} />
         </div>
       </div>
