@@ -6,8 +6,7 @@ import Newsletter from "../components/Misc/Newsletter";
 const Contact = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
-    //TODO Handle form submission logic here
-    console.log("Form submitted");
+    alert("Thanks for contacting us, we will be in touch as soon as possible!");
   };
 
   return (
