@@ -14,11 +14,11 @@ const ApartmentDetails = (props) => {
 
   //   const [apartment, setApartment] = useState(apartment.apartment);
   return (
-    <div className="apartment-details pt-6 overflow-hidden bg-bgLight ">
+    <div className="apartment-details pt-20 overflow-hidden bg-bgLight ">
       <div className="container mx-auto overflow-hidden  ">
-        <div className="mb-4">
+        <div className="mb-4 relative">
           <ImageCarousel imageUrls={apt.images} />
-          <div className="bg-bgDark absolute bottom-0 right-1 p-4 rounded-tl-lg rounded-bl-lg  w-1/3 h-48 shadow-accent   ">
+          <div className="bg-bgDark absolute bottom-0 right-1 p-2 sm:p-4 rounded-tl-lg rounded-bl-lg  w-1/3 h-48 shadow-accent   ">
             <h1 className="text-4xl  font-heading font-bold mb-4">
               {apt.title}
             </h1>

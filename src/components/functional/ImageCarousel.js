@@ -19,7 +19,7 @@ const ImageCarousel = ({ imageUrls }) => {
 
   return (
     <div id="gallery" className="relative w-full" data-carousel="slide">
-      <div className="relative  min-h-[300px] md:min-h-screen overflow-hidden  ">
+      <div className="relative  min-h-[300px] lg:min-h-[600px] md:min-h-[450px] overflow-hidden  ">
         {imageUrls.map((imageUrl, index) => (
           <div
             key={index}
