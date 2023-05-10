@@ -37,7 +37,7 @@ const FinishedProjects = () => {
             </Link>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-10">
-            {projects.map((project) => (
+            {projects.slice(0, 3).map((project) => (
               <Link key={project._id} href={`/project/${project._id}`}>
                 <div
                   key={project.id}

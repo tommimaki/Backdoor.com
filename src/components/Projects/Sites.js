@@ -59,7 +59,7 @@ export default function Sites() {
         <h2 className="font-heading text-2xl sm:text-5xl">Featured </h2>
       </div>
       <div className="container grid lg:grid-cols-2 grid-cols-1  p-5 sm:p-0 gap-5 mt-8">
-        {sites.map((site) => (
+        {sites.slice(0, 2).map((site) => (
           <div
             key={site._id}
             className="bg-white shadow-lg hover:shadow-accent flex flex-col justify-between rounded-lg p-6"

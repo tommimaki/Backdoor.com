@@ -116,9 +116,11 @@ const UnfinishedProjects = () => {
                         <p>
                           Finishing date:
                           <br />{" "}
-                          <b>
-                            {format(parseISO(site.finishingDate), "MM/yyyy")}
-                          </b>
+                          {site.finishingDate && (
+                            <b>
+                              {format(parseISO(site.finishingDate), "MM/yyyy")}
+                            </b>
+                          )}
                         </p>
                       </li>
                       <li className="flex gap-1">
