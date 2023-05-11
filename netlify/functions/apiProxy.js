@@ -1,7 +1,7 @@
 const axios = require("axios");
 
 exports.handler = async function (event, context) {
-  const { path } = event;
+  let { path } = event;
 
   path = path.replace("/.netlify/functions/apiProxy", "");
 
