@@ -7,7 +7,7 @@ exports.handler = async function (event, context) {
     console.log(path);
     const response = await axios({
       method: "GET",
-      url: `http://16.170.141.178:3001${path}`,
+      url: `http://16.170.141.178:3001/api${path}`,
     });
 
     return {
