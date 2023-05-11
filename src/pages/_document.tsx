@@ -6,8 +6,10 @@ export default function Document() {
     <Html lang="en">
       <Head>
 
-        {/* <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet" /> */}
+
         <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Secular+One&display=swap" rel="stylesheet"></link>
+        <link rel="icon" href="/houseicon.png" />
+
 
       </Head>
 

@@ -18,7 +18,7 @@ export default function Header({ isVisible, onLandingPage }) {
         isVisible ? "opacity-100 " : "invisible opacity-0 pointer-events-none"
       }`}
     >
-      <div className="flex justify-between ">
+      <div className="flex justify-between   ">
         <Link href="/">
           <div className="flex flex-col  text-amber-950 items-center text-lg justify-center ml-20 mt-2 ">
             <svg

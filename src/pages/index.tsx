@@ -19,7 +19,7 @@ export default function Home() {
       <Head>
         <title>Backdoor Homes</title>
       </Head>
-      <main className="flex flex-col bg-bgDark">
+      <main className="flex flex-col bg-bgDark max-w-9xl mx-auto">
         <div className="absolute left-0 top-0 z-10 sm:pl-20 sm:pt-40 pl-10 sm:mt-0 mt-72 w-full flex flex-col">
           {/* todo opacity largescreen 0 bghn */}
           <div className=" sm:bg-none bg-bgLight  rounded-l-lg shadow-accent ">

@@ -38,7 +38,6 @@ const Apartments = () => {
         setApartments(apartmentData);
         setParentProjects(parentProjectData);
         setFilteredApartments(apartmentData);
-        console.log(response.data);
       } catch (error) {
         console.error("Error fetching apartments", error.message);
       }

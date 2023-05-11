@@ -27,7 +27,7 @@ export default function Sites() {
   return (
     <div
       id="sites"
-      className="min-h-screen flex flex-col pb-10 items-center bg-bgLight justify-center"
+      className="min-h-screen flex flex-col pb-10 items-center  bg-bgLight justify-center"
     >
       <div className="container grid sm:grid-cols-2  gap-5 h-full">
         {/* Left column: Carousel */}
@@ -55,8 +55,10 @@ export default function Sites() {
       </div>
 
       {/* Projects */}
-      <div className="text-left w-full mx-auto ml-20 pt-10">
-        <h2 className="font-heading text-2xl sm:text-5xl">Featured </h2>
+      <div className="max-w-xl">
+        <div className="text-left  mx-auto   pt-10">
+          <h2 className="font-heading text-2xl  sm:text-5xl">Featured </h2>
+        </div>
       </div>
       <div className="container grid lg:grid-cols-2 grid-cols-1  p-5 sm:p-0 gap-5 mt-8">
         {sites.slice(0, 2).map((site) => (
