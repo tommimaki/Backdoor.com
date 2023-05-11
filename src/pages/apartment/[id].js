@@ -40,7 +40,7 @@ export async function getStaticProps({ params }) {
     props: {
       apartment,
     },
-    revalidate: 60 * 60 * 24 * 7, // Revalidate once every 7 days
+    revalidate: 60 * 60 * 24 * 1, // Revalidate once every 1 days
   };
 }
 
