@@ -1,10 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 // components/ProjectPage.js
 import React, { useState } from "react";
 import Layout from "../Layout/Layout";
 import VisitingDayPicker from "../Misc/VisitingDayPicker";
 import dynamic from "next/dynamic";
 import SmoothDropdown from "../functional/SmoothDropdown";
-import ProjectCarousel from "../functional/ProjectCarousel";
 import ImageCarousel from "../functional/ImageCarousel";
 import Link from "next/link";
 

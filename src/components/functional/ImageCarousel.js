@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 // components/ImageCarousel.js
 import React, { useState } from "react";
 

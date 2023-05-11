@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 // pages/apartments.js
 import { useEffect, useState } from "react";
 import axios from "axios";

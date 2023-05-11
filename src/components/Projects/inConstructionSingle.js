@@ -1,7 +1,7 @@
-// components/UnfinishedProjectPage.js
+/* eslint-disable @next/next/no-img-element */
+
 import React, { useState } from "react";
 import Layout from "../Layout/Layout";
-import ProjectCarousel from "../functional/ProjectCarousel";
 import ImageCarousel from "../functional/ImageCarousel";
 import dynamic from "next/dynamic";
 import { parseISO, format } from "date-fns";
