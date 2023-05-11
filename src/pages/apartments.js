@@ -23,6 +23,7 @@ const Apartments = () => {
   useEffect(() => {
     async function fetchData() {
       try {
+        console.log(NEXT_PUBLIC_API_URL, "env");
         const response = await axios.get(
           `${process.env.NEXT_PUBLIC_API_URL}apartments`
         );
