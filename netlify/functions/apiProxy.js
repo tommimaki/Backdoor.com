@@ -8,7 +8,7 @@ exports.handler = async function (event, context) {
   console.log("path", path);
 
   const apiPath = path.replace("/.netlify/functions/apiProxy", "");
-  const apiUrl = `http://13.48.1.69:3001/api${apiPath}`;
+  const apiUrl = `${process.env.NEXT_PUBLIC_AWS_IP}${apiPath}`;
 
   console.log("apipath", apiPath);
   console.log("apiUrl", apiUrl);
