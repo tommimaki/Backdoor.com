@@ -23,7 +23,6 @@ export default function Apartments() {
         );
         setApartments(apartmentData);
         setParentProjects(parentProjectData);
-        setFilteredApartments(apartmentData);
       } catch (error) {
         console.error("Error fetching apartments", error.message);
       }

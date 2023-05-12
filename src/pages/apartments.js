@@ -23,7 +23,6 @@ const Apartments = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        console.log(NEXT_PUBLIC_API_URL, "env");
         const response = await axios.get(
           `${process.env.NEXT_PUBLIC_API_URL}apartments`
         );
@@ -47,6 +46,7 @@ const Apartments = () => {
 
     fetchData();
   }, []);
+
   const getUniqueLocations = (parentProjects) => {
     const locations = parentProjects.map((project) => project.location);
     return [...new Set(locations)];
