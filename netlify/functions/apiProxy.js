@@ -2,10 +2,16 @@ const axios = require("axios");
 
 exports.handler = async function (event, context) {
   const { path, httpMethod, body } = event;
+  console.log("new function");
+  console.log("method", httpMethod);
+  console.log("body", body);
+  console.log("path", path);
 
   const apiPath = path.replace("/.netlify/functions/apiProxy", "");
   const apiUrl = `http://16.170.141.178:3001/api/${apiPath}`;
 
+  console.log("apipath", apiPath);
+  console.log("apiUrl", apiUrl);
   try {
     let response;
 
