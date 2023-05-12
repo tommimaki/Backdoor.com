@@ -6,11 +6,9 @@ exports.handler = async function (event, context) {
   path = path.replace("/.netlify/functions/apiProxy", "");
 
   try {
-    console.log(path);
-    console.log(`${process.env.NEXT_PUBLIC_AWS_URL}${path}`);
     const response = await axios({
       method: httpMethod,
-      url: `${process.env.NEXT_PUBLIC_AWS_URL}${path}`,
+      url: `http://16.170.141.178:3001/api/${path}`,
       data: body ? JSON.parse(body) : {},
       headers: {
         "Content-Type": "application/json",
