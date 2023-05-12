@@ -8,7 +8,7 @@ exports.handler = async function (event, context) {
   console.log("path", path);
 
   const apiPath = path.replace("/.netlify/functions/apiProxy", "");
-  const apiUrl = `http://16.170.141.178:3001/api/${apiPath}`;
+  const apiUrl = `http://16.170.141.178:3001/api${apiPath}`;
 
   console.log("apipath", apiPath);
   console.log("apiUrl", apiUrl);
