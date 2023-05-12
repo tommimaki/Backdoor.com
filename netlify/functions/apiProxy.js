@@ -7,11 +7,14 @@ exports.handler = async function (event, context) {
 
   try {
     console.log(path);
-    console.log(`http://16.170.141.178:3001/api/${path}`);
+    console.log(`${process.env.AWS_URL}${path}`);
     const response = await axios({
       method: httpMethod,
-      url: `http://16.170.141.178:3001/api/${path}`,
+      url: `${process.env.AWS_URL}${path}`,
       data: body ? JSON.parse(body) : {},
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
 
     return {
