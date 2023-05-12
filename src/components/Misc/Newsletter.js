@@ -19,7 +19,11 @@ export default function Newsletter() {
       setEmail("");
       setTimeout(() => setMessage(""), 5000);
     } catch (error) {
-      setMessage("An error occurred. Please try again later.");
+      if (error.response && error.response.status === 500) {
+        setMessage("Already subscribed.");
+      } else {
+        setMessage("An error occurred. Please try again later.");
+      }
     }
   };
   return (
