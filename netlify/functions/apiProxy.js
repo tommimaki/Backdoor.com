@@ -1,17 +1,26 @@
 const axios = require("axios");
 
 exports.handler = async function (event, context) {
-  let { path } = event;
+  let { path, httpMethod, body } = event;
 
   path = path.replace("/.netlify/functions/apiProxy", "");
 
+  const config = {
+    method: httpMethod,
+    url: `${process.env.AWS_URL}${path}`,
+  };
+
+  if (httpMethod === "POST" || httpMethod === "PUT") {
+    config.data = JSON.parse(body);
+    config.headers = {
+      "Content-Type": "application/json",
+    };
+  }
+
   try {
     console.log(path);
-    console.log(`http://16.170.141.178:3001/api/${path}`);
-    const response = await axios({
-      method: "GET",
-      url: `http://16.170.141.178:3001/api/${path}`,
-    });
+    console.log(`${process.env.AWS_URL}${path}`);
+    const response = await axios(config);
 
     return {
       statusCode: 200,
