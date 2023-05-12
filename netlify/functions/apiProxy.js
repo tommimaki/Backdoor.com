@@ -1,19 +1,29 @@
 const axios = require("axios");
 
 exports.handler = async function (event, context) {
-  let { path, httpMethod, body } = event;
+  const { path, httpMethod, body } = event;
 
-  path = path.replace("/.netlify/functions/apiProxy", "");
+  const apiPath = path.replace("/.netlify/functions/apiProxy", "");
+  const apiUrl = `http://16.170.141.178:3001/api/${apiPath}`;
 
   try {
-    const response = await axios({
-      method: httpMethod,
-      url: `http://16.170.141.178:3001/api/${path}`,
-      data: body ? JSON.parse(body) : {},
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    let response;
+
+    if (httpMethod === "GET") {
+      response = await axios.get(apiUrl, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    } else if (httpMethod === "POST") {
+      response = await axios.post(apiUrl, JSON.parse(body), {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    } else {
+      throw new Error(`Unsupported HTTP method: ${httpMethod}`);
+    }
 
     return {
       statusCode: 200,
