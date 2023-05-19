@@ -1,38 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Backdoor.com
+a construction company website. Loosely based on [Bonava](https://www.bonava.fi/)
+/[Fira](https://fira.fi/) websites
 
-## Getting Started
+User is able to browse through Finished sites, Projects in construction, and apartments for sale. 
+User can Subscribe for newsletter, or ask for apartment showings 
 
-First, run the development server:
+The webapp fetches data from mongoDB via AWS ECS hosted Node.js backend.
+The project includes CMS site, here is the repo for that: [admin site repo](https://github.com/tommimaki/takaovi-admin) 
+Here is link to backend repo  [admin site repo](https://github.com/tommimaki/backdoorBackend)  
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### Tech Stack
+This project is built using:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion for animations
+- Leaflet and React-Leaflet for maps
+- React DateTime Picker for scheduling functionality
+- React Responsive Carousel for image carousels
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Getting Started
+To get a local copy up and running, follow these simple steps:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Prerequisites
+Node.js (v12.0.0 or higher)
+npm (v6.0.0 or higher)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Installation
+Clone the repository:  
+` git clone https://github.com/yourusername/takaovi.git `
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Navigate into the project directory:  
+`cd takaovi`  
 
-## Learn More
+Install the dependencies:  
+`npm install`
 
-To learn more about Next.js, take a look at the following resources:
+### Running the application. 
+To run the application in development mode, use:  
+`npm run dev`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To build the application for production, use:  
+`npm run build`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+To start the application in production mode, use:  
+`npm run start`
 
-## Deploy on Vercel
+To lint your code, use:  
+`npm run lint`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The application will start on localhost:3000.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+### License
+This project is licensed under the terms of the MIT license.
