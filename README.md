@@ -7,7 +7,7 @@ User can Subscribe for newsletter, or ask for apartment showings
 
 The webapp fetches data from mongoDB via AWS ECS hosted Node.js backend.
 The project includes CMS site, here is the repo for that: [admin site repo](https://github.com/tommimaki/takaovi-admin) 
-Here is link to backend repo  [admin site repo](https://github.com/tommimaki/backdoorBackend)  
+Here is link to backend repo  [backend repo](https://github.com/tommimaki/backdoorBackend)  
 
 ### Tech Stack
 This project is built using:
