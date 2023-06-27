@@ -4,7 +4,7 @@ exports.handler = async function (event, context) {
   let { path, httpMethod, body } = event;
 
   path = path.replace("/.netlify/functions/apiProxy", "");
-
+  //test redeploy
   try {
     console.log(path);
     console.log(`${process.env.NEXT_PUBLIC_AWS_URL}${path}`);
