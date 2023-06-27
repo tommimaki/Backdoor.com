@@ -7,10 +7,10 @@ exports.handler = async function (event, context) {
 
   try {
     console.log(path);
-    console.log(`${process.env.AWS_URL}${path}`);
+    console.log(`${process.env.NEXT_PUBLIC_AWS_URL}${path}`);
     const response = await axios({
       method: httpMethod,
-      url: `${process.env.AWS_URL}${path}`,
+      url: `${process.env.NEXT_PUBLIC_AWS_URL}${path}`,
       data: body ? JSON.parse(body) : {},
       headers: {
         "Content-Type": "application/json",
